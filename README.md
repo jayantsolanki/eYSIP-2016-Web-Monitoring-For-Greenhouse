@@ -4,12 +4,13 @@
 Through this project we will design a web portal which will be used for control/monitor the various aspects of the greenhouse mainly scheduling/manual switching of irrigation valves, visualization of the data collected from the sensors nodes, managing the devices and displaying their status.
 
 Website will be designed using the following Web development technologies:
-**Front-end+Back-end:** AngularJS, PHP, Bootstrap, Javascript (including JQuery and AJAX and NodeJS)
-**Database:** MySQL
-**Communication Protocol:** WebSocket
-**Web Tools:** Sublime Text, Bower
-**Development platform:** Linux Ubuntu
-**Target Environment:** Desktop, Tablet and Mobile
+* **Front-end+Back-end:** AngularJS, PHP, Bootstrap, Javascript (including JQuery and AJAX and NodeJS)
+* **Database:** MySQL
+* **Communication Protocol:** WebSocket
+* **Web Tools:** Sublime Text, Bower
+* **Development platform:** Linux Ubuntu
+* **Target Environment:** Desktop, Tablet and Mobile
+
 
 ##Description:
 ***
