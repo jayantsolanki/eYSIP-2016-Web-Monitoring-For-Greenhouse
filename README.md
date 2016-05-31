@@ -27,6 +27,7 @@ Greenhouse has columns of troughs containing plants. Current hardware setup at t
 - **Dashboard:** Website should have a Homepage/Dashboard showing the summarized data of most of the above features.
 
 **Note:**
+
 1. Normal User should only be able to view Scheduling Page, Valve Control page, Device Status and Data Visualization Page.
 2. Admin should be able to view all pages and approve new Users.
 3. Bootstrap themes can be used for faster prototyping.
