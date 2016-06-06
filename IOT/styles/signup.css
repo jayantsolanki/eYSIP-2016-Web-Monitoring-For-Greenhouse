@@ -1,0 +1,148 @@
+body{
+	font-family: 'Roboto',sans-serif;
+}
+
+#register{
+	text-transform: uppercase;
+	font-size:36px;
+	margin-top: 150px;
+	margin-bottom: 30px;
+	color: #3c3c3b;
+
+}
+.signup_fields{
+	border: none;
+	border-bottom:3px solid #cdcdcd;
+	width:350px;
+	margin-bottom:5px;
+	
+}
+.signup_fields:focus{
+
+	outline: none;
+	border-bottom:3px solid #388E3C; 
+
+}
+
+.signup_fields_error{
+	border-bottom: 3px solid #a94442;
+}
+.signup_fields_error:focus{
+
+	border-bottom: 3px solid #a94442;
+}
+
+.signup_fields
+.input_headings{
+font-size: 14px;
+margin-bottom:15px; 
+font-weight: 600;
+color: #3c3c3b;
+}
+
+#signupbutton{
+	background-color: white;
+	color: #388E3C;
+	height: 50px;
+	width: 200px;
+	border: 3px solid #388E3C;
+	font-size: 18px;
+	margin-left: 75px;
+	margin-top: 25px;
+	border-radius: 2px;
+	margin-bottom: 20px;
+}
+
+#signupbutton:hover{
+	outline: none;
+	background-color: #388E3C;
+	color: white;
+	border: 3px solid #388E3C;
+	
+}
+.repasswordcolor{
+	color:#a94442;
+}
+ul, li {
+    margin:0;
+    padding:0;
+    list-style-type:none;
+}
+
+#spansignuperror{
+	height: 40px;
+	width: 350px;
+	border: 2px solid #a94442;
+	font-size: 18px;
+	margin-bottom: 20px;
+	padding-top: 5px;
+	padding-left: 15px;
+	display: none;
+}
+#pswd_info {
+    
+    width:250px;
+    padding:15px;
+    background:#fefefe;
+    font-size:.875em;
+    border-radius:5px;
+    box-shadow:0 1px 3px #ccc;
+    margin-top:10px;
+    margin-left: 50px;
+    
+    border:1px solid #ddd;
+}
+#pswd_info h4 {
+    margin:0 0 10px 0;
+    padding:0;
+    font-weight:normal;
+}
+#pswd_info::before {
+    content: "\25B2";
+    position:relative;
+    bottom:30px;
+    left:105px;
+    font-size:14px;
+    line-height:14px;
+    color:#ddd;
+    text-shadow:none;
+    display:block;
+}
+.invalid {
+    background:url(../images/cross.png) no-repeat 0 50%;
+    padding-left:22px;
+    line-height:24px;
+    color:#ec3f41;
+}
+.valid {
+    background:url(../images/tick.png) no-repeat 0 50%;
+    padding-left:22px;
+    line-height:24px;
+    color:#3a7d34;
+}
+#pswd_info {
+    display:none;
+}
+#username_feed,#emailid_feed,#password_feed,#repassword_feed{
+	display:none;
+}
+@media (max-width: 768px){
+	.signup_fields{
+		width:275px;
+
+	}
+	#register{
+	margin-top: 100px;
+		text-align: center;
+	}
+	#signupbutton{
+		margin-left: 37.5px;
+	}
+	#pswd_info{
+		margin-left: 12.5px;
+	}
+
+	#spansignuperror{
+		width:275px;
+	}
+}
