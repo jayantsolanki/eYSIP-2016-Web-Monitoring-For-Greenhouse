@@ -1,0 +1,146 @@
+body{
+	font-family: 'Roboto',sans-serif;
+}
+
+#login{
+	text-transform: uppercase;
+	font-size:36px;
+	margin-top: 150px;
+	margin-bottom: 30px;
+	color: #3c3c3b;
+
+}
+
+.login_fields{
+	border: none;
+	border-bottom:3px solid #cdcdcd;
+	width:350px;
+	margin-bottom:5px;
+	
+}
+.login_fields:focus{
+
+	outline: none;
+	border-bottom:3px solid #388E3C; 
+
+}
+
+
+.input_headings{
+font-size: 14px;
+font-weight: 100;
+margin-bottom:15px; 
+font-weight: 600;
+color: #3c3c3b;
+}
+.login_fields1{
+	color:#a94442;
+}
+.login_fields_error{
+	border-bottom: 3px solid #a94442;
+}
+.login_fields_error:focus{
+
+	border-bottom: 3px solid #a94442;
+}
+#signupbutton{
+	background-color: #388E3C;
+	color: white;
+	height: 50px;
+	width: 200px;
+	border: none;
+	font-size: 18px;
+	margin-left: 75px;
+	
+	border-radius: 2px;
+}
+
+#signupbutton:hover{
+	outline: none;
+	color: #388E3C;
+	background-color: white;
+	border: 3px solid #388E3C;
+	
+}
+
+#loginbutton{
+	background-color: white;
+	color: #388E3C;
+	height: 50px;
+	width: 200px;
+	border: 3px solid #388E3C;
+	font-size: 18px;
+	margin-top: 25px;
+	border-radius: 2px;
+}
+
+#loginbutton:hover{
+	outline: none;
+	color: white;
+	background-color: #388E3C;
+	border: 3px solid #388E3C;
+	
+}
+
+#forgetpassword{
+	font-size: 14px;
+    font-style: italic;
+    text-decoration: underline;
+    color: #388E3C !important;
+}
+
+#loginerror{
+
+	border: 2px solid #a94442;
+	margin-bottom: 20px;
+	width:350px;
+	height: 40px;
+	font-size: 18px;
+	padding-top: 5px;
+	padding-left: 10px;
+	display: none;
+}
+
+
+#footer
+{
+	background-color: #3c3c3b;
+	margin-top: 100px;
+	color: white;
+	text-align: center;
+	padding-bottom: 25px;
+}
+
+#footername{
+
+	text-align: center;
+	padding-top: 50px;
+	font-size: 36px;
+	margin-bottom: 25px;
+}
+
+
+.glyphicon-heart{
+	color: red;
+}
+
+#password_feed,#username_feed{
+	display:none;
+
+}
+@media (max-width: 768px){
+	.login_fields{
+		width:275px;
+	}
+	#login{
+		margin-top: 100px;
+		text-align: center;
+	}
+	#loginbutton{
+		margin-left: 37.5px;
+	}
+	#loginerror{
+		width:275px;
+	}
+
+}
