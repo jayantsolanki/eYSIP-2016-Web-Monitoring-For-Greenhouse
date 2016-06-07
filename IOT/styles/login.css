@@ -138,9 +138,14 @@ color: #3c3c3b;
 	}
 	#loginbutton{
 		margin-left: 37.5px;
+
 	}
 	#loginerror{
 		width:275px;
+	}
+	#signupbutton{
+		margin-top: 30px;
+		margin-left: 37.5px;
 	}
 
 }

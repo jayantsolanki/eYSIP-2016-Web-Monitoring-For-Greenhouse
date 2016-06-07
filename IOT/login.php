@@ -65,14 +65,14 @@
 
 	
 
-	<div id='footer'>
+	<!--<div id='footer'>
 	<p id="footername">kYantra</p>
 	<p>
         kYantra &copy; IIT Bombay 2016. All Rights Reserved<br>
         Created with <span class="glyphicon glyphicon-heart"></span> in India</p> 
 
 
-	</div>
+	</div> -->
 
 	</body>
 </html>
