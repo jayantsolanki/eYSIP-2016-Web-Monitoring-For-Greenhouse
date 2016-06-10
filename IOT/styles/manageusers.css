@@ -1,0 +1,34 @@
+#user_table{
+	margin-top:200px;
+	margin-right:100px;
+	margin-left:100px;
+}
+
+.changer{
+	width:200px;
+}
+
+#savebutton{
+	margin-top: 25px;
+	background-color: #1976d2;
+	color: white;
+	font-size: 16px;
+	font-weight: 600;
+	width: 150px;
+	height: 35px;
+	border: 3px solid #1976d2;
+	margin-bottom:50px;
+}
+
+#savebutton:hover{
+	background-color: #303f9f;
+	color: white;
+	border: 3px solid #303f9f;
+}
+@media (max-width:768px){
+	#user_table{
+		margin-top:30px;
+		margin-right: -15px;
+		margin-left:-15px;
+	}
+}
