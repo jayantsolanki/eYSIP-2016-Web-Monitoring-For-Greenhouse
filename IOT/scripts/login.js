@@ -8,6 +8,7 @@ app.controller('formcontroller',function($scope){
 $(document).ready(function()
 {
 
+	$('#loginerror').hide();
 	$('#username').keyup(function()
 {
 		if($('#username_div').hasClass('has-error'))
@@ -40,14 +41,17 @@ $(document).ready(function()
 		{
 			$.post('loginscript.php',{username:username,password:password},function (data)
 			{
-	      		
-	      		if(data==true)
+	      		alert(data);
+	      		var newdata=data.trim();
+	      		alert(newdata);
+	      		if(newdata=='1')
 	      		{
 	      			$('#loginerror').show();
-	      			$('#loginerror').text("Username/password incorrect");
+	      			$('#loginerrorspan').text("Username/password incorrect");
 				}
-				else 
+				else if(newdata=='2')
 				{
+					$('#loginerror').hide();
 					alert("Successfully Logged in!");
 				}
 			});
@@ -67,9 +71,7 @@ $(document).ready(function()
 			$('#username_feed').show();
 			$('#username').addClass('login_fields_error');
 		}
-		else
-		{
-		}
+		
 			
 });
 });

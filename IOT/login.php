@@ -22,8 +22,10 @@
 			<div class="col-md-offset-3 col-md-6 col-xs-12">
 
 				<p  id="login">Login</p>
-				<p id="loginerror">Hello</p>
-				
+				<div id="loginerror">
+				<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+				<span id="loginerrorspan"></span>
+				</div>
 
 				<!-- Login Form Begins -->
 
@@ -48,13 +50,13 @@
 
 					<!-- Forget Password Link -->
 
-					<div><a id="forgetpassword" href="">Forgot Password?</a></div>
+					<div><a id="forgetpassword" href="forgotpassword.php">Forgot Password?</a></div>
 
 
  					<!-- Login Button-->
  					
  					<button  id="loginbutton"  name="Login">Login</button>
- 					<button type="submit" id="signupbutton">Create an account</button>  
+ 					<button type="submit" id="signupbutton" onclick="location.href = 'signup.html';">Create an account</button>  
  				</form>
 
  				<!-- Login Form Ends -->

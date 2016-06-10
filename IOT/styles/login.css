@@ -95,13 +95,19 @@ color: #3c3c3b;
 	margin-bottom: 20px;
 	width:350px;
 	height: 40px;
-	font-size: 18px;
-	padding-top: 5px;
+	font-size: 14px;
+	padding-top: 8px;
 	padding-left: 10px;
-	display: none;
+	background-color: #a94442;
+	color: white;
+	font-weight: 600;
+
+	
 }
 
-
+#loginerrorspan{
+	margin-left: 3px;
+}
 #footer
 {
 	background-color: #3c3c3b;
