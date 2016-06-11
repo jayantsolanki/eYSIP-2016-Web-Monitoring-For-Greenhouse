@@ -18,7 +18,11 @@ app.controller('manageusercontroller',function($scope,$http){
           headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
          })
           .success(function(data) {
-            
+          $http.get("php/getuserdetails.php")
+    .then(function (response) {
+      $scope.details = response.data;
+    //$scope.datat();
+  });  
             
           });
        })

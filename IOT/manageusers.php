@@ -26,13 +26,13 @@
             <th>Change Role</th>
         </thead>
         <tbody>
-         <tr ng-repeat='x in details'>
+         <tr ng-repeat='x in details' ng-init='q=x.user_type'>
             <td>{{x.username}}</td>
             <td>{{x.email_id}}</td>
-            <td ><span ng-if="x.user_type==0" class='label label-warning'>Pending Approvals</span>
-<span ng-if="x.user_type==1" class='label label-success'>Admin</span>
-  <span ng-if="x.user_type==2" class='label label-info'>Normal user</span>
-    <span ng-if="x.user_type==3" class='label label-danger'>Deactivated</span>
+            <td ><span ng-if="q==0" class='label label-warning'>Pending Approval</span>
+<span ng-if="q==1" class='label label-success'>Admin</span>
+  <span ng-if="q==2" class='label label-info'>Normal user</span>
+    <span ng-if="q==3" class='label label-danger'>Deactivated</span>
             </td>
             <td>
             <div ng-if="x.user_type==0"class="form-group" >
