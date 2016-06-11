@@ -15,7 +15,9 @@
 <div class="row">
 <div class="col-md-offset-3 col-md-6 col-xs-12">
 <p  id="register">Register</p>
-<p id="spansignuperror"></p>
+<div  id="spansignuperror">
+<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span id="spansignuperrorp"></span>
+</div>
 <form name="signupform"   novalidate>
 
 <!-- UserName Field -->
@@ -73,6 +75,50 @@
 
 
 </div>
+
+
+<!-- Security Question -->
+
+
+<div>
+  <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Security Question
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a>Name of the Elementary School</a></li>
+                <li><a>Favourite Subject</a></li>
+                <li><a>Name of the person you first kissed</a></li>
+                <li><a>Your Mother's pet name</a></li>
+              </ul>
+          </div>
+<br>
+  <span id="sq_feedback"></span>
+ <p id='sq_feed' class="help-block">Please select a security question</p>
+
+</div>
+
+
+<!-- Security Question Answer -->
+
+<div class="form-group" id="sqans_div" >
+<label  for="sqans" id="sqanslabel"class="input_headings control-label">Security Question's Answer</label> </br>
+
+<input type="text" id="sqans" name="sqans" 
+ class="signup_fields" ng-model="signup.sqans"  required>
+ </br>
+ <span id="sqans_feedback"></span>
+ <p id='sqans_feed' class="help-block">Please enter the answer</p>
+ </div>
+
+
+
+
+
+
+
+
 <!-- Sign Up Button-->
  
 <button   id="signupbutton"  >Create an account</button>

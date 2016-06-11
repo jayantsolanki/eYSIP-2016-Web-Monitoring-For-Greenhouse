@@ -72,12 +72,19 @@ ul, li {
 #spansignuperror{
 	height: 40px;
 	width: 350px;
-	border: 2px solid #a94442;
-	font-size: 18px;
+	
+	font-size: 14px;
+	font-weight: 600;
 	margin-bottom: 20px;
-	padding-top: 5px;
+	padding-top: 8px;
 	padding-left: 15px;
+	background-color: #a94442;
+	color:white;
 	display: none;
+}
+
+#spansignuperrorp{
+	margin-left: 3px;
 }
 #pswd_info {
     
@@ -123,8 +130,21 @@ ul, li {
 #pswd_info {
     display:none;
 }
-#username_feed,#emailid_feed,#password_feed,#repassword_feed{
+#username_feed,#emailid_feed,#password_feed,#repassword_feed,#sq_feed,#sqans_feed{
 	display:none;
+}
+
+.dropdown-menu li a{
+	cursor: pointer;
+}
+
+#sqerror{
+	margin-top: 5px;
+}
+
+
+#sqans_div{
+	margin-top: 20px;
 }
 @media (max-width: 768px){
 	.signup_fields{

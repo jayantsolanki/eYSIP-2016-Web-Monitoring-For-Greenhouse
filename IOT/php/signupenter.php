@@ -3,8 +3,11 @@
 $username=$_POST['username'];
 $emailid=$_POST['emailid'];
 $password=$_POST['password'];
+$sqans=$_POST['sqans'];
+$sqoption=$_POST['sqoption'];
 
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT') or die('error');
+
+$dbc=mysqli_connect('localhost','root','','iot') or die('error');
 $query1="SELECT * from users WHERE username='$username'";
 $result1=mysqli_query($dbc,$query1) or die('error querying');
 $query2="SELECT * from users WHERE email_id='$emailid'";
@@ -18,7 +21,7 @@ else if(mysqli_num_rows($result2)!=0){
 
 }
 else{
-	$query3="INSERT INTO users(username,email_id,password) VALUES('$username','$emailid',SHA('$password'))";
+	$query3="INSERT INTO users(username,email_id,password,Security_Question,Security_Question_Answer) VALUES ('$username','$emailid',SHA('$password'),'$sqoption',SHA('$sqans'))";
 		$result3=mysqli_query($dbc,$query3) or die('error querying3');
 
 }
