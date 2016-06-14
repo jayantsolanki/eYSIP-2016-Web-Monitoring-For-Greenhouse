@@ -13,6 +13,11 @@ app.controller('devicemancontroller',function($scope,$http,$log,$uibModal){
     	$scope.groups = response.data;
 		
   });
+    $http.get("php/getdevicenames.php")
+    .then(function (response) {
+      $scope.devicenames = response.data;
+    
+  });
    $scope.clicked=function(a,b){
    	var d="a"+a+b;
    	
@@ -102,6 +107,80 @@ if(option==2){
         }
       });
     }
+        else if(option==3){
+      $http({
+          method  : 'POST',
+          url     : 'php/updategroupname.php',
+          data    :$.param({'name':y.name,'id':y.id}), //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+      angular.forEach($scope.groups,function(value,key){
+        if(value.id==y.id ){
+         value.name=y.name;
+
+        }
+      });
+      $http.get("php/getdeviceinfo.php")
+    .then(function (response) {
+      $scope.details = response.data;
+    
+  });
+ 
+    }
+       else if(option==4){
+      $http({
+          method  : 'POST',
+          url     : 'php/updatedevicename.php',
+          data    :$.param({'name':y.name,'id':y.id}), //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+      angular.forEach($scope.devicenames,function(value,key){
+        if(value.id==y.id){
+         value.name=y.name;
+
+        }
+      });
+        $http.get("php/getdeviceinfo.php")
+    .then(function (response) {
+      $scope.details = response.data;
+    
+  });
+    }
+ else if(option==5){
+      $http({
+          method  : 'POST',
+          url     : 'php/addgroupname.php',
+          data    :$.param({'name':y.name}), //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+        $http.get("php/getdeviceinfo.php")
+    .then(function (response) {
+      $scope.details = response.data;
+    
+  });
+    $http.get("php/getgroups.php")
+    .then(function (response) {
+      $scope.groups = response.data;
+    
+  });
+  
+    }
+ else if(option==6){
+      $http({
+          method  : 'POST',
+          url     : 'php/adddevicetype.php',
+          data    :$.param({'name':y.name}), //forms user object
+          headers : {'Content-Type': 'application/x-www-form-urlencoded'} 
+         })
+    $http.get("php/getdevicenames.php")
+    .then(function (response) {
+      $scope.devicenames = response.data;
+    
+  });
+
+  
+    }
+
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
@@ -112,9 +191,21 @@ app.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, option,
 $scope.option=option;
   $scope.device = device;
   $scope.groups=groups;
+if(option!=5){
 $scope.x=angular.copy(device);
+}
+$scope.y={
+name:''
+};
   $scope.ok = function () {
+
+if($scope.option!=5 && $scope.option!=6){
     $uibModalInstance.close($scope.x);
+}  
+else{
+  $uibModalInstance.close($scope.y);
+
+}
   };
 
   $scope.cancel = function () {

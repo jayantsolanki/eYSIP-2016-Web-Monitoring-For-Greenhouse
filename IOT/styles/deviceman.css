@@ -138,6 +138,19 @@ i:hover{
 }
 .material-icons.md-18 { font-size: 18px; }
 
+#abc:hover{
+	color:#777;
+
+}
+.editgroupname{
+	padding-left:240px;
+	padding-right:40px;
+}
+.editdevicename{
+	padding-right:240px;
+
+}
+
 @media (max-width: 768px){
 	.card{
 		float:none;
@@ -159,4 +172,14 @@ height:470px;
 		.aligning{
 			padding-left:15px;
 		}
+		.editgroupname{
+	padding-left:40px;
+	padding-right:40px;
+}
+		.editdevicename{
+	padding-top:20px;		
+	padding-left:40px;
+	padding-right:40px;
+}
+
 } 
