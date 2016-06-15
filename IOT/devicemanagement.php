@@ -15,32 +15,13 @@
 <body style='position:relative;'>
 	
 	<div ng-controller='devicemancontroller' >
+		 
+    
+  
 		<h2 style='padding-left:20px; text-align:center;'>DEVICE MANAGEMENT</h2>
 		<div class='row'>
-			<div class='col-md-6 col-xs-12 editgroupname'>
-				
-				<div class="alert alert-info" >
-  					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the group names.
-				</div>
-				<div ng-repeat='x in groups' >
-				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,3)'>edit</i>
-				</br></br>
-				</div>
-			Add a new group: <button class='btn btn-primary' ng-click='open(x,5)'>Add group</button>
-			</div>
-			<div class='col-md-6 col-xs-12 editdevicename'>
-				
-				<div class="alert alert-info" >
-  					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the device type names.
-				</div>
-				<div ng-repeat='x in devicenames' >
-				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,4)'>edit</i>
-				</br></br>
-				</div>
-			Add a new device type: <button class='btn btn-primary' ng-click='open(x,6)'>Add device</button>
-			</div>
-	
-		</div>
+			<tabs>
+    <pane title='Devices'>	
 		<div class='row'> 
 			<div dir-paginate="x in details|orderBy:sortKey:reverse|filter:search|itemsPerPage:9" class=' col-md-4 col-xs-12 card '>
 				<div class="card__front" ng-attr-id='{{"a"+x.id +""+ x.switches}}' >
@@ -97,7 +78,38 @@
        boundary-links="true" >
     </dir-pagination-controls>
 	</div>
+	</pane>
+	
+    <pane title="Edit groups">
 
+			<div class='col-md-6 col-xs-12 editgroupname'>
+				
+				<div class="alert alert-info" >
+  					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the group names.
+				</div>
+				<div ng-repeat='x in groups' >
+				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,3)'>edit</i>
+				</br></br>
+				</div>
+			Add a new group: <button class='btn btn-primary' ng-click='open(x,5)'>Add group</button>
+			</div>
+	</pane>
+	<pane title='Edit Devices(types)'>		
+			<div class='col-md-6 col-xs-12 editdevicename'>
+				
+				<div class="alert alert-info" >
+  					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the device type names.
+				</div>
+				<div ng-repeat='x in devicenames' >
+				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,4)'>edit</i>
+				</br></br>
+				</div>
+			Add a new device type: <button class='btn btn-primary' ng-click='open(x,6)'>Add device</button>
+			</div>
+	
+		</div>
+	</pane>
+	</tabs>
 		<script type="text/ng-template" id="myModalContent.html" >
         <div class="modal-header " ng-class={aligning:option==2}>
             <h3 class="modal-title">{{device.deviceId}}</h3>
