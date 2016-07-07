@@ -1,0 +1,131 @@
+.controller,body,.row{
+	font-family:'Roboto',sans-serif;
+	background-color: #edeff0;
+	
+}
+
+ .heading{
+ 	padding-top:50px;
+ 	padding-left:50px;
+  margin-top: 0px
+}
+ .group_row{
+ 	padding-left:50px;
+}
+
+
+ .chartDisplayDiv1{
+ 	
+ 	
+ }
+
+
+ #extra{
+ 	float: right;
+ 	color:black;
+ 	width: 50px;
+ 	position: absolute;
+ 	z-index: 99;
+ }
+
+ a.list-group-item{
+ 	cursor: pointer;
+ }
+
+
+ .displayafter{
+ 	display: none;
+ }
+
+ .configuration{
+ }
+
+ .limit_error{
+ 	display:none;
+ }
+
+.chartDisplayDiv{
+	display: none;
+}
+
+.removeGlyphicon{
+	
+}
+
+.glyphicon-chevron-left,.glyphicon-chevron-right{
+	outline:none;
+}
+
+.extradata{
+	position:absolute; 
+	
+	top:12px;
+	right:48px;
+	font-weight:300
+}
+
+.progressCirculardemoBasicUsage body {
+  padding: 20px;
+  color:gray; }
+
+.progressCirculardemoBasicUsage h4 {
+  margin: 10px 0; }
+
+.progressCirculardemoBasicUsage md-progress-circular {
+  margin-bottom: 20px; }
+
+.progressCirculardemoBasicUsage #loaders > md-switch {
+  margin: 0;
+  margin-left: 10px;
+  margin-top: -10px; }
+
+.progressCirculardemoBasicUsage #loaders > h5 {
+  margin-top: 0; }
+
+.progressCirculardemoBasicUsage #loaders > p {
+  margin-right: 20px;
+  margin-bottom: 24px; }
+
+.progressCirculardemoBasicUsage p.small {
+  font-size: 0.8em;
+  margin-top: -18px; }
+
+.progressCirculardemoBasicUsage hr {
+  width: 100%;
+  margin-top: 20px;
+  border-color: rgba(221, 221, 177, 0.1); }
+
+.progressCirculardemoBasicUsage p.small > code {
+  font-size: 0.8em; }
+
+.progressCirculardemoBasicUsage .visible {
+  border-color: rgba(221, 221, 177, 0); }
+
+
+@media (max-width: 768px){
+	.extradata{
+		top: 60px;
+    text-align: center;
+	}
+  #chartdiv1{
+    margin-top: 25px;
+  }
+  #chartdiv2{
+    margin-top: 25px;
+  }
+  #chartdiv3{
+    margin-top: 25px;
+  }
+  #chartdiv4{
+    margin-top: 25px;
+  }
+body{
+  overflow-x: hidden;
+}
+.heading{
+  padding-left: 0;
+}
+}
+
+
+

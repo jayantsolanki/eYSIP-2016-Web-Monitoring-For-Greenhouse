@@ -6,15 +6,21 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>Forgot Password-Greenhouse monitoring</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Bootstrap Core CSS -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="styles/forgotpassword.css">
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
  
 </head>
 <body>
+<?php   
+if(!isset($_COOKIE['user_id'])){
+?>
+  
+ <div ng-include="'menu2.html'"></div>   
+ 
 <div class="container" ng-controller="formcontroller">
 <div class="row">
-<div class="col-md-offset-3 col-md-6 col-xs-12">
+<div class="col-md-offset-4 col-md-6 col-xs-12">
 <p  id="forgot">Forgot Password</p>
 <div id="spansignuperror">
 	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
@@ -108,12 +114,20 @@
 </div>
 
 </div>
+<div style='margin-top:90px;'ng-include="'footer.php'"></div>
+<?php
+}
+else{
+  header("Location:dashboard.php");
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+}
+?>
 
-   
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" ></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<!-- jQuery -->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+<!-- AngularJs -->
+<script src="./bower_components/angular/angular.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
 
 <script type="text/javascript" src="scripts/forgotpassword.js"></script>
 </body>

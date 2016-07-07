@@ -3,12 +3,13 @@
 $username=$_POST['username'];
 $emailid=$_POST['emailid'];
 $choice=$_POST['choice'];
-$dbc=mysqli_connect('localhost','root','','iot') or die('error');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('error');
 
 if($choice==2)
 {
 	$sqans=$_POST['sqans'];
-	$query="SELECT * from users WHERE username='$username' AND email_id='$emailid' AND Security_Question_Answer=SHA('$sqans') ; ";
+	$query="SELECT * from users WHERE username='$username' AND email_id='$emailid' AND Security_Question_Answer=SHA('$sqans')  ";
 	$result=mysqli_query($dbc,$query) or die('error querying');
 	$row=mysqli_num_rows($result);
 	if($row==1)

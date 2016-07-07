@@ -6,21 +6,41 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>Device management-Greenhouse monitoring</title>
+<link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
+<link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
+
 <!-- Bootstrap Core CSS -->
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type='text/css' href="styles/deviceman.css" >
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+ <link href="./bower_components/material-design-icons/iconfont/material-icons.css"
       rel="stylesheet">
+<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+
 </head>
-<body style='position:relative;'>
-	
-	<div ng-controller='devicemancontroller' >
-		 
+<body  ng-controller='devicemancontroller' style='position:relative;'>
+	<?php
+	if(isset($_COOKIE['user_id']))		
+{
+	$id=$_COOKIE['user_id'];	
+	require_once('php/config.php');
+
+	$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) ;
+	$query="SELECT * FROM users WHERE user_id='$id'";
+	$result=mysqli_query($dbc,$query) ;
+	$row=mysqli_fetch_array($result);
+	$user_type=$row['user_type'];
+	$username=$row['username'];
+	if($user_type==1 || $user_type==2){
+
+	?>
+	<div >
+	<div style='position:fixed;top:0px;left:0;width:100%; z-index:99;'><div ng-include="'menu/demo/advanced.php'"></div></div>
+	 
     
   
-		<h2 style='padding-left:20px; text-align:center;'>DEVICE MANAGEMENT</h2>
-		<div class='row'>
-			<tabs>
+		<h2 style='padding-left:20px; padding-top:50px;text-align:center;'>DEVICE MANAGEMENT</h2>
+		<div class='container-fluid'>
+			<tabs style='margin-left:0px;'>
     <pane title='Devices'>	
 		<div class='row'> 
 			<div dir-paginate="x in details|orderBy:sortKey:reverse|filter:search|itemsPerPage:9" class=' col-md-4 col-xs-12 card '>
@@ -71,7 +91,7 @@
 		
 		</div>
 			</br>
-	<div class='footer'style=' position:absolute; bottom:-100px;  left: 50%; margin-left:-120px;'>
+	<div style=' position:absolute; bottom:-100px;  left: 50%; margin-left:-120px;'>
 			 <dir-pagination-controls
        max-size="5"
        direction-links="true"
@@ -164,7 +184,25 @@
         </div>
     </script>
 	</div>		
+<div style='position:absolute;bottom:-400px;left:0;width:100%;'ng-include="'footer.php'"></div>	
+<div class='clearfix'></div>
+<?php
+	}
+	else if($user_type==0){
+header("Location:dashboard.php");
 
+	
+	}
+	else if($user_type==3){
+header("Location:dashboard.php");
+
+	}
+}
+else{
+header("Location:index.php");
+
+}
+?>
 
 <!-- jQuery -->
 <script src="./bower_components/jquery/dist/jquery.min.js"></script>
@@ -177,6 +215,6 @@
 <script src='./bower_components/angularUtils-pagination/dirPagination.js'></script>
 <!-- Customs Scripts -->
 <script type='text/javascript' src="scripts/deviceman.js" ></script>
-
+<script type="text/javascript" src="menu/dist/js/jquery.mmenu.all.min.js"></script>
 </body>
 </html>

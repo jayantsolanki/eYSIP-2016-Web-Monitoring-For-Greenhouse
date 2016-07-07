@@ -39,20 +39,30 @@ $(document).ready(function()
 		var password=$('#password').val();
 		if(username!='' && password!='')
 		{
-			$.post('loginscript.php',{username:username,password:password},function (data)
+			$.post('php/loginscript.php',{username:username,password:password},function (data)
 			{
-	      		alert(data);
+	      		
 	      		var newdata=data.trim();
-	      		alert(newdata);
+	      		
 	      		if(newdata=='1')
 	      		{
 	      			$('#loginerror').show();
+	     			$('#loginerror').css('background-color',' #f44336');
+
 	      			$('#loginerrorspan').text("Username/password incorrect");
 				}
 				else if(newdata=='2')
 				{
-					$('#loginerror').hide();
-					alert("Successfully Logged in!");
+					$('#loginerror').show();
+					          $('#loginerror').css('background-color','#388E3C');
+					          
+          $('#loginerrorspan').text('Successfully logged in');
+
+			setTimeout(function () 
+          {
+          window.location.href = "dashboard.php"; //will redirect to your blog page (an ex: blog.html)
+          }, 2000); 
+
 				}
 			});
 		}

@@ -162,13 +162,13 @@ $(document).ready(function()
     	if((username!='') && (emailid!='') )
 		{
 			
-			alert(choice);
+			
 			$.post('php/forgotpasswordenter.php',{username:username,sqans:sqans,emailid:emailid,newpass:newpass,cnewpass:cnewpass,choice:choice,let:let,len:len,cap:cap,number:number},function(data)
         	{
-        		alert(data);
+        		
         		if(choice==1)
 				    {
-         			if(data=='2')
+         			if(data==2)
          			{
           				$('#spansignuperror').show();
                   $('#spansignuperrortext').text("Username/Email-id incorrect");
@@ -187,7 +187,8 @@ $(document).ready(function()
           		}
           		else if(choice==2)
           		{
-          			if(data=='1')
+          			
+                if(data==1)
           			{
           				choice=3;
                   $('#spansignuperror').hide();
@@ -206,7 +207,7 @@ $(document).ready(function()
 				{
 					if(len && let && cap && number)
 					{
-						if(data=='1')
+						if(data==1)
           				{
                       $('#spansignuperror').show();
                       $('#spansignuperrortext').text("Password Updated Successfully");
@@ -214,17 +215,15 @@ $(document).ready(function()
 
           				    setTimeout(function () 
                       {
-                        window.location.href = "login.php"; //will redirect to your blog page (an ex: blog.html)
-                      }, 5000);	
+                        window.location.href = "index.php"; //will redirect to your blog page (an ex: blog.html)
+                      }, 2000);	
 						      }
           				else
           				{
-          					alert('p d');
           				}
           			}
           			else
           			{
-          				alert('Password criteria doesn\'t match');
           			}
 
 
@@ -232,11 +231,6 @@ $(document).ready(function()
 
           		else
           		{
-          			alert(len);
-          			alert(let);
-          			alert(cap);
-          			alert(number);
-          			alert('Good Bye');
           		}
 			});
 		    
@@ -250,7 +244,6 @@ $(document).ready(function()
   		}
 		else
 		{
-			alert('Empty');
 		}
 	});
 });

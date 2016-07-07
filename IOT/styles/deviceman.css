@@ -1,15 +1,21 @@
 body{
 	font-family:'Roboto',sans-serif;
+
 	background-color: #edeff0;
+margin-top: -20px;
 }
 .boxes{
 	background-color: white;
 	border-bottom:2px solid #bdbdbd;
-	margin:30px;
+	margin:10px;
 	padding:30px;
 	color:#fb005b ;
 	border-radius: 3px 3px 3px 3px;
 	height:400px;
+}
+a{
+	color:black!important;
+	text-decoration: none!important;
 }
 .details
 {
@@ -145,10 +151,12 @@ i:hover{
 .editgroupname{
 	padding-left:240px;
 	padding-right:40px;
+	padding-top: 40px;
 }
 .editdevicename{
-	padding-right:240px;
-
+	padding-right:40px;
+		padding-left:240px;
+		padding-top: 40px;
 }
 
 @media (max-width: 768px){
@@ -173,6 +181,8 @@ height:470px;
 			padding-left:15px;
 		}
 		.editgroupname{
+	padding-top:20px;		
+
 	padding-left:40px;
 	padding-right:40px;
 }

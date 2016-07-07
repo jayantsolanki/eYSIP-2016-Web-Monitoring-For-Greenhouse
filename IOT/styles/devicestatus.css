@@ -1,10 +1,10 @@
 .controller,body{
 	font-family:'Roboto',sans-serif;
 	background-color: #edeff0 ;
-	margin-top:-20px;
 }
  .heading{
- 	padding-top:50px;
+ 	margin-top: 0px;
+ 	padding-top:70px;
  	padding-left:50px;
  }
  .group_row{
@@ -60,7 +60,7 @@ color: #fff;
 	background-color: #388e3c;
 }
 .online2{
-	background-color: #4caf50;
+	background-color: #4caf50	;
 }
 .icons{
 	position: absolute;
@@ -162,12 +162,11 @@ position: absolute;
 }
 
 table, th , td {
-  border: 1px solid grey;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 10px;
   margin-left: auto;
     margin-right: auto;
-}
+ }
 table{
 	    overflow-y:scroll;
 

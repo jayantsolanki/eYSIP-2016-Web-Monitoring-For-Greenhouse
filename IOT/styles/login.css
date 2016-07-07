@@ -108,27 +108,7 @@ color: #3c3c3b;
 #loginerrorspan{
 	margin-left: 3px;
 }
-#footer
-{
-	background-color: #3c3c3b;
-	margin-top: 100px;
-	color: white;
-	text-align: center;
-	padding-bottom: 25px;
-}
 
-#footername{
-
-	text-align: center;
-	padding-top: 50px;
-	font-size: 36px;
-	margin-bottom: 25px;
-}
-
-
-.glyphicon-heart{
-	color: red;
-}
 
 #password_feed,#username_feed{
 	display:none;

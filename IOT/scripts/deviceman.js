@@ -253,7 +253,9 @@ else{
 
 }
   };
-
+$scope.up=function(){
+  alert('hi');
+}
   $scope.cancel = function () {
     $uibModalInstance.dismiss('cancel');
   };

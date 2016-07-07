@@ -235,22 +235,25 @@ $('#repassword').addClass('signup_fields_error');
       if(username!='' && emailid!='' && password!='' && repassword!='' && !emailfeedback && password==repassword  && buttonvalue!='' && sqans!=''){
         
         $.post('php/signupenter.php',{username:username,emailid:emailid,password:password,sqoption:sqoption,sqans:sqans},function(data){
-         if(data=='1'){
+         if(data==1){
           $('#spansignuperror').show();
           $('#spansignuperrorp').text('Username already exists..try another one');
 
          }
-         else if(data=='2'){
+         else if(data==2){
           $('#spansignuperror').show();
          $('#spansignuperrorp').text('Email-id is already registered');
 
 
          }
          else{
-
           $('#spansignuperror').show();
           $('#spansignuperror').css('background-color','#388E3C');
-          $('#spansignuperrorp').text('Succcessfully created an account');
+          $('#spansignuperrorp').text('Successfully created an account');
+          setTimeout(function () 
+          {
+          window.location.href = "dashboard.php"; //will redirect to your blog page (an ex: blog.html)
+          }, 2000); 
 
 
          } 

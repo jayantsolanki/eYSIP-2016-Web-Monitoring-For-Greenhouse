@@ -1,0 +1,104 @@
+body,.taskschedulingapp,.taskschedulecontroller,.row{
+	font-family:'Roboto',sans-serif;
+		background-color: #edeff0 ;
+
+	color:#000;
+
+}
+.heading{
+	font-size:32px;
+text-transform: uppercase;
+padding-top:50px;
+padding-left:20px;
+color:#000;
+}
+.heading2{
+	font-size:24px;
+padding-left:20px;
+
+color:#000;
+}
+.pad{
+	padding-top:10px;
+}
+ .group_row{
+ padding-left:20px;
+ }
+ .hide{
+	display:none;
+}
+.hours{
+
+}
+.duration,.frequency{
+	padding-left: 35px;
+}
+.starttime,.stoptime{
+padding-left:20px;
+ 
+}
+.add1{
+	margin-left:100px; padding-top:0px; padding-bottom:0px;
+}
+.tasklist{
+	padding-top:103px; 
+}
+.groupheading{
+	font-size:18px; 
+}
+.mobile{
+	padding-left: -20px;
+}
+.schedules{
+	margin-left: 10px;
+	border-left: 3px solid #999;
+	padding-left:10px;
+}
+.material-icons{
+	font-size: 18px;
+}
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-16 { font-size: 16px; }
+.boxes{
+	background-color: white;
+	border-bottom:2px solid #bdbdbd;
+	padding:30px;
+	padding-top:10px;
+	border-radius: 3px 3px 3px 3px;
+	margin-bottom: 10px;  
+  /*text-align: center;*/
+ margin:20px;
+}
+.delete:hover{
+	cursor:pointer;
+	opacity:0.9;
+}
+@media(max-width: 768px){
+	
+.pad{
+	padding-top: 10px;
+}
+.add1{
+	margin-left: 35%;
+}
+.tasklist{
+		padding-top:20px;
+}
+.mobile{
+padding-left: 20px;
+}
+.addschedule{
+	margin-left: 0;
+}
+.schedules{
+	border-left:none;
+	padding:left:0;
+	margin-left: 0;
+}
+.boxes{
+	padding: 10px;
+margin-left: -10px;
+margin-right:10px;
+margin-bottom: 10px;
+}
+}

@@ -22,16 +22,19 @@ while($row=mysqli_fetch_array($result)){
 	$result2=mysqli_query($dbc,$query2);
 	$res=mysqli_fetch_array($result2);
 	$row_array['status']=$res['status'];
-	$row_array['created_At']=$res['created_At'];
+	$row_array['created_At'] = strtotime($res['created_At']);
 	$query3="SELECT * FROM feeds WHERE device_id='$devid' ORDER BY created_at DESC LIMIT 1 ";
 	$result3=mysqli_query($dbc,$query3);
 	$res=mysqli_fetch_array($result3);
-	$row_array['updated_at']=$res['created_at'];
+	$row_array['updated_at'] = strtotime($res['created_at']);
+	
+
 	if($row['type']==1){
 	$row_array['prim']=$res['field2'];
 	$row_array['sec']=$res['field3'];
 	array_push($result_array, $row_array);
 	}else if($row['type']==2){
+		$row_array['sentype']=$res['field1'];
 		$row_array['prim']=$res['field3'];
 	$row_array['sec']=$res['field4'];
 	array_push($result_array, $row_array);

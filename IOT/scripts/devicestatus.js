@@ -1,33 +1,8 @@
-var app=angular.module('devicestatusapp',['ngMaterial','ngWebSocket']);
-app.factory('MyData', function($websocket,$log) {
-      // Open a WebSocket connection 
-      var dataStream = $websocket('ws://10.129.139.139:8180');
- 
-      var collection = [];
- 	dataStream.onOpen(function(){
- 	});
-      dataStream.onMessage(function(message) {
+var app=angular.module('devicestatusapp',['ngMaterial']);
 
-        collection.push(JSON.parse(message.data));
-        $log.info(JSON.stringify(JSON.parse(message.data)));
-      });
- dataStream.onClose(function(){
- 	alert('connection closed');
- })
-      var methods = {
-        collection: collection,
-        get: function() {
-          dataStream.send(JSON.stringify({ action: 'get' }));
-        }
-      };
- 
-      return methods;
-    });
-app.controller('devicestatuscontroller',function($scope,$http,MyData){
-	$scope.userGroup = '';
-	$scope.MyData=MyData;
-	$scope.$watch('MyData.collection',function(newvalue,oldvalue){
-	});
+app.controller('devicestatuscontroller',function($scope,$http){
+	$scope.userGroup = 1;
+	$scope.p="Wireless-valves";
             $http.get("php/getgroups.php")
     .then(function (response) {
     	$scope.groups = response.data;
@@ -37,8 +12,18 @@ app.controller('devicestatuscontroller',function($scope,$http,MyData){
     .then(function (response) {
       $scope.switches = response.data;
   });
-   
-$scope.display=function(){
+   $http.get("php/getdevicestatus.php",{
+            params:
+            {
+              'id':$scope.userGroup
+            }
+          })
+    .then(function (response) {
+      $scope.devices = response.data;
+  
+  }); 
+
+$scope.onchange=function(){
 
 	angular.forEach($scope.groups,function(value,key){
         if(value.id==$scope.userGroup){
