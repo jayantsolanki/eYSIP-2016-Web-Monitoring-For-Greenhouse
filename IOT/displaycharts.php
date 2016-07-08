@@ -176,7 +176,7 @@ header("Location:index.php");
     <!-- Amcharts Library -->
     <script src="./bower_components/amcharts3/amcharts/amcharts.js"></script>
     <script src="./bower_components/amcharts3/amcharts/serial.js"></script>
-    <script src="./bower_components/amcharts3/plugins/dataloader/dataloader.min.js"></script>
+    <script src="./bower_components/amcharts3/amcharts/plugins/dataloader/dataloader.min.js"></script>
    
     <!-- Customs Scripts -->
     <script type='text/javascript' src="scripts/displaycharts.js" ></script>
