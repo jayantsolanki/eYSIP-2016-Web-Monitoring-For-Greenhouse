@@ -1,7 +1,6 @@
 <?php
 
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname); 
+$dbc=mysqli_connect('localhost','root','','iot') or die("Error Connecting to Database");
 $device_id=$_GET['device_id'];
 //$device_type=$_GET['device_type'];
 $field_value=$_GET['field_value'];
@@ -243,7 +242,7 @@ if($field_value_int==6)
 	{
 		if($current_tab=='1')
 		{
-			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND EXTRACT(DAY FROM created_at)='$current_date_int' AND EXTRACT(MONTH FROM created_at)='$current_month_int' AND EXTRACT(YEAR FROM created_at)='$current_year_int' AND field6<=$yaxis"; 
+			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND EXTRACT(DAY FROM created_at)='$current_date_int' AND EXTRACT(MONTH FROM created_at)='$current_month_int' AND EXTRACT(YEAR FROM created_at)='$current_year_int' AND field4<=$yaxis"; 
 			$result=mysqli_query($dbc,$query) or die("Error executing query");
 			$result_array=array();
 			while($row=mysqli_fetch_array($result))
@@ -255,7 +254,7 @@ if($field_value_int==6)
 		}
 		elseif($current_tab=='2')
 		{
-			$query="SELECT created_at,(field4) FROM feeds WHERE device_id='$device_id' AND WEEKOFYEAR(created_at)='$current_week_int' AND field6<=$yaxis"; 
+			$query="SELECT created_at,(field4) FROM feeds WHERE device_id='$device_id' AND WEEKOFYEAR(created_at)='$current_week_int' AND field4<=$yaxis"; 
 			$result=mysqli_query($dbc,$query) or die("Error executing query");
 			$result_array=array();
 			while($row=mysqli_fetch_array($result))
@@ -269,7 +268,7 @@ if($field_value_int==6)
 		{
 			$current_month=$_GET['current_month'];
 			$current_month_int=intval($current_month);
-			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND MONTH(created_at)='$current_month_int' AND field6<=$yaxis"; 
+			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND MONTH(created_at)='$current_month_int' AND field4<=$yaxis"; 
 			$result=mysqli_query($dbc,$query) or die("Error executing query");
 			$result_array=array();
 			while($row=mysqli_fetch_array($result))
@@ -281,7 +280,7 @@ if($field_value_int==6)
 		}
 		elseif($current_tab=='4')
 		{
-			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND YEAR(created_at)='$current_year_int' AND field6<=$yaxis"; 
+			$query="SELECT created_at,field4 FROM feeds WHERE device_id='$device_id' AND YEAR(created_at)='$current_year_int' AND field4<=$yaxis"; 
 			$result=mysqli_query($dbc,$query) or die("Error executing query");
 			$result_array=array();
 			while($row=mysqli_fetch_array($result))
