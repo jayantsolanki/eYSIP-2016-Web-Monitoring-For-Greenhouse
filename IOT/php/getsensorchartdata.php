@@ -1,6 +1,6 @@
 <?php
-
-$dbc=mysqli_connect('localhost','root','','iot') or die("Error Connecting to Database");
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $device_id=$_GET['device_id'];
 //$device_type=$_GET['device_type'];
 $field_value=$_GET['field_value'];
