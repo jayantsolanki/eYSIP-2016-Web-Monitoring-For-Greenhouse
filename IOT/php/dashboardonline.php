@@ -1,5 +1,6 @@
 <?php
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $result_array=array();
 $query="SELECT COUNT(*) as count FROM devices ";
 $result=mysqli_query($dbc,$query);

@@ -1,5 +1,6 @@
 <?php
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $userGroup=$_GET['userGroup'];
 //$userGroup=1;
 $query="SELECT * FROM devices WHERE groupId='$userGroup'";

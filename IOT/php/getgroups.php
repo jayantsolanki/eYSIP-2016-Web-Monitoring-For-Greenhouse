@@ -1,5 +1,6 @@
 <?php
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM groups";
 $result=mysqli_query($dbc,$query);
 $result_array=array();

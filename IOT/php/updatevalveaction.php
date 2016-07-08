@@ -1,4 +1,6 @@
 <?php
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $action=$_POST['action'];
 $deviceId=$_POST['deviceId'];
 $switchId=$_POST['switchId'];
@@ -6,7 +8,7 @@ $duration=$_POST['duration'];
 $dur=intval($duration)*60;
 $starttime=date('Hi');
 $endtime = date("Hi",time() +$dur);
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+
 if($action=='1'){
 $query="UPDATE switches SET action=1 WHERE deviceId='$deviceId' and switchId='$switchId'";
 $result=mysqli_query($dbc,$query);

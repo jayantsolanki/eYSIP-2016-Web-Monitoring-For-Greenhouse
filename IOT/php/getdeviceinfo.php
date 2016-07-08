@@ -2,8 +2,9 @@
 
 
 
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT') or die('error');
 $query="SELECT * from devices ";
 $result=mysqli_query($dbc,$query) or die('error');
 $result_array=array();
