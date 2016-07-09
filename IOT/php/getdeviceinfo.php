@@ -1,3 +1,7 @@
+
+
+<!-- Used to get information of a device-->
+
 <?php
 
 

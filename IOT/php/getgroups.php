@@ -1,3 +1,6 @@
+
+<!-- Used to obtain various groups of devices -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
