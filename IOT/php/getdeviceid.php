@@ -1,4 +1,7 @@
 <?php
+
+//Obtain name and id of particular device
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $userGroup=$_GET['userGroup'];

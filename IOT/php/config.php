@@ -1,5 +1,7 @@
 <?php
 
+//Store database credentials
+
 
 $dbhost = 'localhost';
 $dbusername = 'root';

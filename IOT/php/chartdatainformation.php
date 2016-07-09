@@ -1,5 +1,7 @@
 <?php
 
+//Used to obtain certain info such as no of switches,devicetype etc. of a device
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $userDevice=$_GET['userDevice'];

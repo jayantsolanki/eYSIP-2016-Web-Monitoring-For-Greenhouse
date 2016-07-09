@@ -1,5 +1,7 @@
 <?php
 
+//Used to add new group type
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 

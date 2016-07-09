@@ -1,4 +1,7 @@
 <?php
+
+//Obtain info of device
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $query="SELECT * from devices ORDER BY status DESC";

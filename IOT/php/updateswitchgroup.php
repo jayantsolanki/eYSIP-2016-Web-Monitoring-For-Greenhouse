@@ -1,5 +1,7 @@
 <?php
 
+//Update info bout switches
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $switch=$_POST['switches'];

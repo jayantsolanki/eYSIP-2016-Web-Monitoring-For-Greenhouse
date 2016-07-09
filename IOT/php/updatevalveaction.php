@@ -1,4 +1,7 @@
 <?php
+
+//Update switch status
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $action=$_POST['action'];

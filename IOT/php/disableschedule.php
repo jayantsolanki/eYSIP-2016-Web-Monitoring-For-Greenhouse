@@ -1,4 +1,7 @@
 <?php
+
+//Disable a schedule
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $id=$_POST['id'];

@@ -1,5 +1,7 @@
 <?php
 
+//Retrieve info from deviceNotif table
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $query="SELECT * FROM deviceNotif";
