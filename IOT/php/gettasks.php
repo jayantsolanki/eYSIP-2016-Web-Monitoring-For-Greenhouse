@@ -1,7 +1,10 @@
 
-<!-- Used to obtain information about various tasks -->
+
 
 <?php
+
+// Used to obtain information about various tasks 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM tasks ";

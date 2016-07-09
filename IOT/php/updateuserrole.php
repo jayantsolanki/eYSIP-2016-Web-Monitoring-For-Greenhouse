@@ -1,7 +1,10 @@
 
-<!-- Update role of a particular user -->
+
 
 <?php
+
+// Update role of a particular user 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $user=$_POST['user'];

@@ -1,9 +1,10 @@
 
-<!-- Stores database credentials -->
+
 
 
 <?php
 
+// Stores database credentials 
 
 $dbhost = 'localhost';
 $dbusername = 'root';

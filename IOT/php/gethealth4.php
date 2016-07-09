@@ -1,6 +1,8 @@
-<!--  Used to get count of connectivity status of all devices -->
 
 <?php
+
+// Used to get count of connectivity status of all devices 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM deviceNotif WHERE  field6=0";

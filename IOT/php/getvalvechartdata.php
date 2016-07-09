@@ -1,8 +1,10 @@
 
-<!-- Used to obtain information about valves(For Charts)-->
+
 
 
 <?php
+
+// Used to obtain information about valves(For Charts)
 
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

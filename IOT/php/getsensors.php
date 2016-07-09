@@ -1,7 +1,10 @@
 
-<!-- Used to get data such as temp,moist,battery and humidity of all sensors -->
+
 
 <?php
+
+// Used to get data such as temp,moist,battery and humidity of all sensors 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $group=$_POST['group'];

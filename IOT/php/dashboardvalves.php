@@ -1,7 +1,10 @@
 
-<!-- Used to get count of stopped and running switches-->
+
 
 <?php
+
+// Used to get count of stopped and running switches
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM switches";

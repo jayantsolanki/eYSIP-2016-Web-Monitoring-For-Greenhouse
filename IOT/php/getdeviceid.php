@@ -1,7 +1,9 @@
 
-<!-- Used to get deviceid and devicename of particular group of devices -->
 
 <?php
+
+//Used to get deviceid and devicename of particular group of devices 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $userGroup=$_GET['userGroup'];

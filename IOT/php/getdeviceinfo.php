@@ -1,10 +1,10 @@
 
 
-<!-- Used to get information of a device-->
+
 
 <?php
 
-
+// Used to get information of a device
 
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

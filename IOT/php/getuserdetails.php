@@ -1,7 +1,10 @@
 
-<!-- Used to obtain info about user account-->
+
 
 <?php
+
+// Used to obtain info about user account
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query='SELECT * FROM users';

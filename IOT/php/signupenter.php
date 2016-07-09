@@ -1,7 +1,9 @@
 
-<!-- Stores information of a new user when he sign ups -->
+
 
 <?php
+
+// Stores information of a new user when he sign ups 
 
 $username=$_POST['username'];
 $emailid=$_POST['emailid'];

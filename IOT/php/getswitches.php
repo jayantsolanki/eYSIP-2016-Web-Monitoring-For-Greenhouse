@@ -1,6 +1,9 @@
-<!--  Used to obtain information of various switches -->
+
 
 <?php
+
+// Used to obtain information of various switches 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM switches";

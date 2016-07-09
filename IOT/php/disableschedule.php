@@ -1,7 +1,10 @@
 
-<!-- Used to disable a schedule -->
+
 
 <?php
+
+// Used to disable a schedule 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $id=$_POST['id'];

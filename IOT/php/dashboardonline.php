@@ -1,8 +1,14 @@
 
-<!-- Used to find the count of offline and online devices -->
+
 
 <?php
+
+// Used to find the count of offline and online devices 
+
 require_once('config.php');
+
+
+
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $result_array=array();
 $query="SELECT COUNT(*) as count FROM devices ";

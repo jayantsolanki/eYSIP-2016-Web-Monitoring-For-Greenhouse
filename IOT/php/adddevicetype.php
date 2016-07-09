@@ -1,6 +1,9 @@
-<!--  Used to  add new type of device in sensors table -->
+
 
 <?php
+
+// Used to  add new type of device in sensors table 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $name=$_POST['name'];

@@ -1,7 +1,10 @@
 
-<!-- Used to find type of device i.e whether it is sensor or valve -->
+
 
 <?php
+
+// Used to find type of device i.e whether it is sensor or valve 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM sensors";

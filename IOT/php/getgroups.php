@@ -1,7 +1,10 @@
 
-<!-- Used to obtain various groups of devices -->
+
 
 <?php
+
+// Used to obtain various groups of devices 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM groups";

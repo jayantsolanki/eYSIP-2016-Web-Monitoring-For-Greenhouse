@@ -1,7 +1,10 @@
 
-<!-- Update info about a particular device -->
+
 
 <?php
+
+// Update info about a particular device 
+
 $id=$_POST['id'];
 $name=$_POST['name'];
 $regionId=$_POST['regionId'];

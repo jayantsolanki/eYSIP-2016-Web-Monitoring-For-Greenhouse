@@ -1,6 +1,9 @@
-<!-- Used to find the count of those devices whose secondary battery is critical and also of those whose secondary battery is healthy -->
+
 
 <?php
+
+// Used to find the count of those devices whose secondary battery is critical and also of those whose secondary battery is healthy 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $query="SELECT * FROM deviceNotif WHERE  field2=0";

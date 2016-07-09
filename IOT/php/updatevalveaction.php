@@ -1,7 +1,10 @@
 
-<!-- Used to store on/off feature of switch of a valve -->
 
 <?php
+
+// Used to store on/off feature of switch of a valve 
+
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $action=$_POST['action'];

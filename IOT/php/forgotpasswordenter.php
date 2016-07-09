@@ -1,9 +1,11 @@
 
 
-<!-- Forgot password php script -->
+
 
 
 <?php
+
+// Forgot password php script 
 
 $username=$_POST['username'];
 $emailid=$_POST['emailid'];

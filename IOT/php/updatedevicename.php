@@ -1,7 +1,10 @@
 
-<!-- Updates name of a particular device -->
+
 
 <?php
+
+// Updates name of a particular device 
+
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
 $id=$_POST['id'];
