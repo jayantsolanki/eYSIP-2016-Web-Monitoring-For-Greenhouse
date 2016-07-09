@@ -1,5 +1,6 @@
 <?php
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT') or die('error');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $query="SELECT * from devices ORDER BY status DESC";
 $result=mysqli_query($dbc,$query) or die('error');
 $result_array=array();

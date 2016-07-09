@@ -1,10 +1,10 @@
 <?php
-
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $username=$_POST['username'];
 $emailid=$_POST['emailid'];
 $choice=$_POST['choice'];
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('error');
+
 
 if($choice==2)
 {

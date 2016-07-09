@@ -1,5 +1,6 @@
 <?php
-$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+require_once('config.php');
+$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname) or die('Error connecting to database');
 $id=$_COOKIE['user_id'];
 $query="SELECT * FROM users WHERE user_id!='$id'";
 $result=mysqli_query($dbc,$query);
