@@ -1,3 +1,6 @@
+
+<!-- Used to find the count of offline and online devices -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

@@ -1,3 +1,7 @@
+
+<!-- Stores database credentials -->
+
+
 <?php
 
 
