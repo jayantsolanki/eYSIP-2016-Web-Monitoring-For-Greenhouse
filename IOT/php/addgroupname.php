@@ -1,12 +1,5 @@
- 
-
-
 <?php
-
-//Used to add new group of devices in groups table 
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $name=$_POST['name'];
 $query="INSERT INTO groups(name) VALUES('$name')";
 $result=mysqli_query($dbc,$query);

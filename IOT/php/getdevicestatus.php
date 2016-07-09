@@ -1,7 +1,7 @@
 <?php
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $id=$_GET['id'];
+
 $query="SELECT * FROM devices WHERE groupId='$id'";
 $result=mysqli_query($dbc,$query);
 	$result_array=array();
@@ -31,13 +31,20 @@ while($row=mysqli_fetch_array($result)){
 	
 
 	if($row['type']==1){
-	$row_array['prim']=$res['field2'];
-	$row_array['sec']=$res['field3'];
+	$row_array['prim']=(int)$res['field2'];
+	$row_array['sec']=(int)$res['field3'];
 	array_push($result_array, $row_array);
 	}else if($row['type']==2){
 		$row_array['sentype']=$res['field1'];
-		$row_array['prim']=$res['field3'];
-	$row_array['sec']=$res['field4'];
+		$row_array['prim']=(int)$res['field3'];
+	$a=(int)$res['field4'];
+	
+	if(($a<3200) ){
+		$row_array['sec']=((3200-$a)*50)/1200;
+	}
+	else{
+		$row_array['sec']=0;
+	}
 	array_push($result_array, $row_array);
 		
 	}

@@ -1,7 +1,6 @@
 <?php
 
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT') or die('Error connecting to database');
 $grpid=$_GET['grpid'];
 
 $query="SELECT groups.id AS gid,devices.id AS deviceid,switches.switchId,switches.groupId,devices.name,switches.action,switches.deviceId AS sdid FROM groups,switches,devices WHERE groups.id=switches.groupId AND switches.deviceId=devices.deviceId AND groups.id='$grpid' " ;

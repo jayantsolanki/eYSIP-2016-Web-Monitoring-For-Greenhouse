@@ -1,12 +1,5 @@
-
-
-
 <?php
-
-// Used to get data such as temp,moist,battery and humidity of all sensors 
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $group=$_POST['group'];
 $query="SELECT * FROM groups WHERE name='$group'";
 $result=mysqli_query($dbc,$query);

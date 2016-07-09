@@ -1,5 +1,5 @@
-var app=angular.module('taskschedulingapp',['ngMaterial']);
-app.controller('taskschedulecontroller',function($scope,$http){
+var app=angular.module('taskschedulingapp',['ngMaterial','ui.bootstrap','angular-confirm']);
+app.controller('taskschedulecontroller',function($scope,$http,$confirm){
 	            $http.get("php/getgroups.php")
     .then(function (response) {
     	$scope.groups = response.data;
@@ -354,6 +354,8 @@ $scope.enable=function(y){
 }
 
 $scope.delete=function(y){
+	$confirm({text: 'Are you sure you want to delete?'})
+        .then(function() {
 	 				      $http({
 		          method  : 'POST',
 		          url     : 'php/deleteschedule.php',
@@ -396,6 +398,7 @@ $scope.delete=function(y){
   });
 		
 				});	
+});
 }
 $scope.onchange2=function(){
 

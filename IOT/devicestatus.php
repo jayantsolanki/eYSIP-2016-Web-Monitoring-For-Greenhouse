@@ -4,8 +4,10 @@
 <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
      <title>Device status-Greenhouse monitoring</title>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
 
@@ -17,9 +19,10 @@
 <link rel="stylesheet" type='text/css' href="styles/devicestatus.css" >
 <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"> -->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+ <link href="./bower_components/material-design-icons/iconfont/material-icons.css"
       rel="stylesheet">
-<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+
  
 </head>
 <body  ng-controller="devicestatuscontroller" style='position:relative;'>
@@ -68,7 +71,7 @@
 <p style=' text-align:center;padding:5px 5px 5px 5px;'><span id="wserror" class='label'style="color:white;"></span></p>
 
 
-<p style=' text-align:center;'>Group selected: <span ng-repeat='x in groups'><span ng-if='x.id==userGroup' class='label label-info'>{{p}}</span></span></p>
+<p style=' text-align:center;font-size:18px;' >Group selected: <span ng-repeat='x in groups'><span ng-if='x.id==userGroup' class='label label-info'>{{p}}</span></span></p>
 	<div class='container-fluid'>
   <div class='row '>
     
@@ -95,11 +98,11 @@
         			    <p ng-if='x.typeId==1'><span class='details'>Switches:</span> {{x.switches}}</p> 
             	  </div> -->
                 <div class=" text-center col-md-12 col-xs-12">
-                  <p ng-if='x.switches<=1'><span class='details updated_at' >Battery Level</span></p>
-                  <span ng-if='x.switches<=1'><span class='details updated_at' >Primary:</span><span ng-attr-class='{{"d"+x.id}}'>{{x.prim}}</span> </span>
-                  <span ng-if='x.switches<=1 && x.typeId==1'><span class='details updated_at' >Secondary:</span>{{x.sec}} </span  >
+                  <p ng-if='x.switches<=1' style='font-size:14px;'><span class='details updated_at' >Battery Level</span></p>
+                  <span ng-if='x.switches<=1'><span class='details updated_at' >Primary:</span><span ng-attr-class='{{"d"+x.id}}' ng-if='x.typeId==1'>{{x.prim/1024 | number : 3}} Volts</span><span ng-attr-class='{{"d"+x.id}}' ng-if='x.typeId==2'>{{x.prim/4096*4 | number : 3}} Volts</span> </span>
+                  <span ng-if='x.switches<=1 && x.typeId==1'><span class='details updated_at' >Secondary:</span>{{x.sec/137.1428571428571 | number : 3}} Volts </span  >
                   <span  ng-if='x.typeId==1' class='icons' ng-click="clicked(x.id)"><i class="material-icons"  style='color:black;'>flip_to_back</i></span>
-                  <p ng-if='x.typeId==2 && x.sentype!="b"'><span class='details updated_at' >Moisture:</span><span ng-attr-class='{{"e"+x.id}}'>{{x.sec}}</span> </p>
+                  <p ng-if='x.typeId==2 && x.sentype!="b"'><span class='details updated_at' >Moisture:</span><span ng-attr-class='{{"e"+x.id}}'><span ng-if='x.sec<100'>{{x.sec}}</span><span ng-if='x.sec>100'>0</span>%</span> </p>
                   <p class='updated_at small'style='color:#999;' ng-if='x.switches<=1'>Updated:<span > <span ng-attr-class='{{"g"+x.id}}' data-livestamp="{{x.updated_at}}"></span></span></p>         
                 </div>          
 
@@ -254,10 +257,23 @@ header("Location:index.php");
                         if(obj.deviceId==msg.deviceId){
                           var d='.d'+obj.id;
                           var e='.e'+obj.id;
-                          $(d).text(msg.batValue);
+                          var x=parseInt(msg.batValue);
+                          x=(x/4096)*4;
+                          x=x.toFixed(3);
+                          $(d).text(x+' Volts');
+                          
                           if(msg.deviceType!='b'){
-                          $(e).text(msg.moistValue);
-                             
+           var zz=parseInt(msg.moistValue);
+                          if(zz<3200 && zz>2000){
+                            zz=(3200-zz)*50/1200;
+                          }
+                          else{
+                            zz=0;
+                          }
+                          zz=zz.toFixed(3);
+                          
+                          $(e).text(zz+'%');
+                                            
                   
                         }
                             var f='.g'+obj.id;
@@ -382,9 +398,21 @@ header("Location:index.php");
                         if(obj.deviceId==msg.deviceId){
                           var d='.d'+obj.id;
                           var e='.e'+obj.id;
-                          $(d).text(msg.batValue);
+                                var x=parseInt(msg.batValue);
+                          x=(x/4096)*4;
+                          x=x.toFixed(3);
+                          $(d).text(x+' Volts');
+                   
                           if(msg.deviceType!='b'){
-                          $(e).text(msg.moistValue);
+                          var zz=parseInt(msg.moistValue);
+                          if(zz<3200 && zz>2000){
+                            zz=(3200-zz)*50/1200;
+                          }
+                          else{
+                            zz=0;
+                          }
+                          zz=zz.toFixed(3);
+                          $(e).text(zz+'%');
                              
                   
                         }

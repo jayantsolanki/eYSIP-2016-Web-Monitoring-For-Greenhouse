@@ -7,8 +7,9 @@
    <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
 
-   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <title>Create account-Greenhouse monitoring</title>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
 <!-- Bootstrap Core CSS -->
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 

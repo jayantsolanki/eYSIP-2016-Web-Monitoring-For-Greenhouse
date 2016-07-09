@@ -1,0 +1,79 @@
+body,.controller{
+	font-family:'Roboto',sans-serif;
+	background-color: #edeff0 ;
+
+
+}
+ .boxes{
+	background-color: white;
+	border-bottom:2px solid #bdbdbd;
+	border:1px solid #323232;
+	padding:30px;
+	padding-top:10px;
+	padding-left:15px;
+	padding-right:15px;
+	color:#000;
+	border-radius: 3px 3px 3px 3px;
+	margin-bottom: 15px;  
+  /*text-align: center;*/
+ 
+ padding-bottom:0;
+	}
+md-content.md-default-theme, md-content{
+	background-color: #edeff0;
+}
+.dev_heading{
+font-size:24px;	
+color: #000;
+}
+.unhealthy{
+background-color:#e53935; 
+}
+.healthy{
+background-color: #388e3c;
+
+}
+.notapplicable{
+	background-color: #1976d2;
+}
+.select_dropdown{
+	width:320px;
+}
+.select_dropdown a{
+	text-decoration:none; 
+}
+.groupselect{
+	width:340px;
+}
+.groupselectli{
+	width:295px;
+}
+.del{
+	color:#A94442;
+}
+.add{
+	margin-bottom: 200px;
+}
+.hide{
+	display: none;
+}
+.del:hover{
+opacity: 0.9;
+cursor: pointer;
+}
+@media(max-width: 868px){
+.groupselect{
+	width:320px;
+}
+.groupselectli{
+	width:295px;
+}
+.mob{
+	margin-left: -15px;
+
+	margin-right: -15px;
+}
+.add{
+	margin-bottom: 20px;
+}
+}

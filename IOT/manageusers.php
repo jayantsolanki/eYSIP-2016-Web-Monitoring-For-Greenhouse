@@ -4,7 +4,8 @@
 <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
     <title>Manage Users-Greenhouse monitoring</title>
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
@@ -15,7 +16,7 @@
 <link href="./bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="./bower_components/angular-datatables/dist/css/angular-datatables.min.css" rel="stylesheet" type="text/css">
 <!-- <link href='./bower_components/bootstrap-table/dist/bootstrap-table.min.css'> -->
-<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -41,7 +42,7 @@
 <div class="container" id='user_table' >
     <div class='table-responsive'>
   <h2>MANAGE USERS</h2>
-      <table  datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="table table-bordered table-striped table-hover  nowrap">
+      <table  datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" dt-instance="dtInstance"class="table table-bordered table-striped table-hover  nowrap">
        
         <thead>
             <th>Username</th>
@@ -50,8 +51,8 @@
             <th>Change Role</th>
         </thead>
         <tbody>
-         <tr ng-repeat='x in details' ng-init='q=x.user_type'>
-            <td>{{x.username}}</td>
+         <tr ng-repeat='x in details' ng-init='q=x.user_type' >
+            <td >{{x.username}}</td>
             <td>{{x.email_id}}</td>
             <td ><span ng-if="q==0" class='label label-warning'>Pending Approval</span>
 <span ng-if="q==1" class='label label-success'>Admin</span>

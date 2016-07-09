@@ -1,12 +1,5 @@
-
-
-
 <?php
-
-// Update role of a particular user 
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $user=$_POST['user'];
 $role=$_POST['role'];
 $query="UPDATE users SET user_type='$role' WHERE username='$user'";

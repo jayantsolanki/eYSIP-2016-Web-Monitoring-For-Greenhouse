@@ -1,7 +1,3 @@
-
-
-
-
 <?php
 require_once('config.php');
 $error_msg="";

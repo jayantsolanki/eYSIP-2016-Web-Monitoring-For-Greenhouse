@@ -4,8 +4,9 @@
 		<meta charset='utf-8'>
    		<meta http-equiv="X-UA-Compatible" content="IE=edge">
    		<meta name="viewport" content="width=device-width, initial-scale=1">
-   		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     	<title>Login-Greenhouse monitoring</title>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
 	<!-- Bootstrap Core CSS -->
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
    		<link type="text/css" rel="stylesheet" href="styles/login.css">

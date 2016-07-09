@@ -2,8 +2,7 @@
 $switch=$_POST['switches'];
 $deviceId=$_POST['deviceId'];
 $group=$_POST['group'];
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $query1="SELECT * FROM groups WHERE name='$group'";
 $result=mysqli_query($dbc,$query1);
 $group=mysqli_fetch_array($result);

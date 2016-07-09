@@ -1,15 +1,10 @@
-
-
-
-
 <?php
 
-// Stores database credentials 
 
 $dbhost = 'localhost';
 $dbusername = 'root';
-$dbpassword = '';
-$dbname = 'iot';
+$dbpassword = 'ankitg444';
+$dbname = 'IOT';
 
 ?>
 

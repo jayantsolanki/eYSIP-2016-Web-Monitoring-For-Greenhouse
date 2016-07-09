@@ -4,7 +4,7 @@
 <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
 
   <!-- 	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
  -->    <title>Control Valves-Greenhouse monitoring</title>
@@ -19,7 +19,9 @@
       rel="stylesheet">
 
       <link href='styles/valvecontrol.css' rel='stylesheet' type='text/css'>
-<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+ <link href="./bower_components/material-design-icons/iconfont/material-icons.css"
+      rel="stylesheet">
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body  ng-controller="DropdownCtrl">
@@ -155,7 +157,6 @@ header("Location:index.php");
 <script src='./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
 
   <!-- Angular Material Library -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     <script type='text/javascript' src="scripts/valvecontrol.js" ></script>
   <script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="./bower_components/livestampjs-develop/livestamp.js"></script>

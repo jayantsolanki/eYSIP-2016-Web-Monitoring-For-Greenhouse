@@ -2,8 +2,10 @@ var app=angular.module('manageusersapp',['datatables']);
 
 app.controller('manageusercontroller',function($scope,$http){
 	var dtOptions=null;
-
+  var dtInstance = {};
+  $scope.dtInstance=dtInstance;
 	$scope.dtOptions=dtOptions;
+  
  $http.get("php/getuserdetails.php")
     .then(function (response) {
     	$scope.details = response.data;
@@ -27,7 +29,7 @@ app.controller('manageusercontroller',function($scope,$http){
           });
        })
       
- 
+     window.location.reload(false);
 
     }
  $scope.update=function(user,myval){

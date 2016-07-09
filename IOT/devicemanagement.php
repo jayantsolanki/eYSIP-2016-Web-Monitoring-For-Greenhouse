@@ -4,7 +4,8 @@
 <meta charset='utf-8'>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
     <title>Device management-Greenhouse monitoring</title>
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
@@ -14,7 +15,7 @@
 <link rel="stylesheet" type='text/css' href="styles/deviceman.css" >
  <link href="./bower_components/material-design-icons/iconfont/material-icons.css"
       rel="stylesheet">
-<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
 <body  ng-controller='devicemancontroller' style='position:relative;'>
@@ -30,7 +31,7 @@
 	$row=mysqli_fetch_array($result);
 	$user_type=$row['user_type'];
 	$username=$row['username'];
-	if($user_type==1 || $user_type==2){
+	if($user_type==1 ){
 
 	?>
 	<div >
@@ -45,8 +46,8 @@
 		<div class='row'> 
 			<div dir-paginate="x in details|orderBy:sortKey:reverse|filter:search|itemsPerPage:9" class=' col-md-4 col-xs-12 card '>
 				<div class="card__front" ng-attr-id='{{"a"+x.id +""+ x.switches}}' >
-    				<div class=' boxes'>
-				<p class='dev_heading' ><span  > {{x.deviceId}}</span></p>
+    				<div ng-class=" {'boxes':x.status==0,'boxes1':x.status==1}">
+				<p class='dev_heading' ><span  > {{x.deviceId}}</span> <span ng-if='x.status==1' class='label label-primary ' style='font-size:14px; position:relative; bottom:5px;'>New Device</span></p>
 				<p><span class='details'>Name:-</span> {{x.name}}</p>
 				<p><span class='details'>Type:-</span> {{x.type}}</p>
 				<p><span class='details'>Switch ID:-</span> {{x.switches}}</p>
@@ -80,9 +81,9 @@
 					<p>	<span ng-if='x.field6' ><span class='details'> Field6:-</span>{{x.field6}}</span></p>
 					</div>
 					</div>
-						<p ng-if='x.created_at'><span class='details'>Created at:-</span>{{x.created_at}}</p>	
-						<p ng-if='x.updated_at'><span class='details'>Updated at:-</span>{{x.updated_at}}</p>	
-						<p ng-if='x.elevation'><span class='details'>Elevation:-</span>{{x.elevation}}</p>	
+						<p ng-if='x.created_at'><span class='details'>Created :-</span><span ng-attr-class='{{"f"+x.id}}' data-livestamp="{{x.created_at}}"></span></p>	
+						<p ng-if='x.updated_at'><span class='details'>Updated :-</span><span ng-attr-class='{{"f"+x.id}}' data-livestamp="{{x.updated_at}}"></span></p>	
+						<p ng-if='x.elevation'><span class='details'>Elevation(mtrs):-</span>{{x.elevation}}</p>	
 						<p style='text-align:center;'><button   class='moreinfo' ng-click='clicked2(x.id,x.switches)'> Go Back</button>
 						</p>
 					</div>
@@ -102,7 +103,7 @@
 	
     <pane title="Edit groups">
 
-			<div class='col-md-6 col-xs-12 editgroupname'>
+			<div class='editgroupname'>
 				
 				<div class="alert alert-info" >
   					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the group names.
@@ -111,11 +112,11 @@
 				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,3)'>edit</i>
 				</br></br>
 				</div>
-			Add a new group: <button class='btn btn-primary' ng-click='open(x,5)'>Add group</button>
+			 <button class='btn btn-primary' ng-click='open(x,5)'>Add new group</button>
 			</div>
 	</pane>
 	<pane title='Edit Devices(types)'>		
-			<div class='col-md-6 col-xs-12 editdevicename'>
+			<div class='editdevicename'>
 				
 				<div class="alert alert-info" >
   					Click on <i class="material-icons md-18 abc" style='position:relative; top:3px; cursor:initial;'>edit</i> to edit the device type names.
@@ -124,7 +125,7 @@
 				{{x.id}}.	{{x.name}} <i class="material-icons md-18"  style='position:relative; top:3px; '  ng-click='open(x,4)'>edit</i>
 				</br></br>
 				</div>
-			Add a new device type: <button class='btn btn-primary' ng-click='open(x,6)'>Add device</button>
+			<button class='btn btn-primary' ng-click='open(x,6)'>Add new device type</button>
 			</div>
 	
 		</div>
@@ -150,7 +151,7 @@
             <input type='text' value='{{device.latitude}}'class='signup_fields' ng-model='x.latitude'></input></br>
             Longitude:</br>
             <input type='text' value='{{device.longitude}}'class='signup_fields' ng-model='x.longitude'></input></br>
-            Elevation:</br>
+            Elevation(mtrs):</br>
             <input type='text' value='{{device.elevation}}'class='signup_fields' ng-model='x.elevation'></input></br>
             
         </div>
@@ -193,6 +194,11 @@ header("Location:dashboard.php");
 
 	
 	}
+	else if($user_type==2){
+header("Location:dashboard.php");
+
+	
+	}
 	else if($user_type==3){
 header("Location:dashboard.php");
 
@@ -214,6 +220,9 @@ header("Location:index.php");
 <script src='./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
 <script src='./bower_components/angularUtils-pagination/dirPagination.js'></script>
 <!-- Customs Scripts -->
+<script type="text/javascript" src="./bower_components/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="./bower_components/livestampjs-develop/livestamp.js"></script>
+
 <script type='text/javascript' src="scripts/deviceman.js" ></script>
 <script type="text/javascript" src="menu/dist/js/jquery.mmenu.all.min.js"></script>
 </body>

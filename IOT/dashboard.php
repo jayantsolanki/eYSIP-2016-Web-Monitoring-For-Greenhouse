@@ -7,7 +7,7 @@
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
 
-       <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
      <title>Dashboard-Greenhouse monitoring</title>
 <!-- Bootstrap Core CSS -->
     <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +19,8 @@
       rel="stylesheet"> -->
  <link href="./bower_components/material-design-icons/iconfont/material-icons.css"
       rel="stylesheet">
-<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body ng-controller='dashboardcontroller'>
 <?php
@@ -56,9 +57,7 @@ if(isset($_COOKIE['user_id']))
     					<div class='task_icon_position'>
     						<i class="glyphicon glyphicon-tasks tasks_icon"></i>
 						</div>
-						<span class="tasks_circle">
-    					{{x.number}}
-						</span>    				
+						    				
     				</div>		
         		</div>	
 			</div>	
@@ -97,15 +96,13 @@ if(isset($_COOKIE['user_id']))
     					<div class='online_icon_position'>
     						<i class="material-icons online_icon">devices</i> 
 						</div>
-						<span class="online_circle">
-    					{{x.number}}
-						</span>    				
+						    				
     				</div>		
         		</div>	
 			</div>	
 			<div class='online_additional'>
 				<div class="online_additional_content">
-				<div google-chart chart="myChartObject" style="height:123px; width:100%;"></div>
+				<div  id="chartonoff" style="height:130px; width:100%;"></div>
 				</div>
 			</div>	
 			<div class='online_footer'>
@@ -130,9 +127,7 @@ if(isset($_COOKIE['user_id']))
     					<div class='users_icon_position'>
     						<i class="glyphicon glyphicon-user users_icon"></i>
 						</div>
-						<span class="users_circle">
-    					{{x.number}}
-						</span>    				
+						    				
     				</div>		
         		</div>	
 			</div>	
@@ -255,15 +250,13 @@ if(isset($_COOKIE['user_id']))
     					<div class='switches_icon_position'>
     						<i class="glyphicon glyphicon-tint switches_icon"></i>
     					</div>
-						<span class="switches_circle">
-    					{{x.number}}
-						</span>    				
+						    				
     				</div>		
         		</div>	
 			</div>	
 			<div class='switches_additional'>
 				<div class="switches_additional_content small">
-					<div google-chart chart="myChartObject1" style="height:123px; width:100%;"></div>
+					<div id="chartoc" style="height:123px; width:100%;"></div>
 							
 				</div>
 			</div>	
@@ -295,22 +288,23 @@ if(isset($_COOKIE['user_id']))
     			
 								<div class='col-md-3 col-xs-12 right_border' style='padding:20px;' >
 									<p style='color:black;'>Primary Battery</p>
-									<div google-chart chart="myChartObject2" style="height:160px; width:100%;"></div>
+									<div id="charthealth1" style="height:120px; width:100%;"></div>
 
 								</div>
 								<div class='col-md-3 col-xs-12 right_border' style='padding:20px;' >
 										<p style='color:black;'>Secondary Battery</p>
-										<div google-chart chart="myChartObject3" style="height:160px; width:100%;"></div>
+										<div id="charthealth2" style="height:120px; width:100%;"></div>
+										<span id="chartlegend2"></span>
 										
 								</div>
 								<div class='col-md-3 col-xs-12 right_border' style='padding:20px;' >
 									<p style='color:black;'>Moisture</p>
-									<div google-chart chart="myChartObject4" style="height:160px; width:100%;"></div>
+									<div id="charthealth3" style="height:120px; width:100%;"></div>
 									
 								</div>
 								<div class='col-md-3 col-xs-12 ' style='padding:20px;' >
 									<p style='color:black;'>Connectivity</p>
-									<div google-chart chart="myChartObject5" style="height:160px; width:100%;"></div>
+									<div id="charthealth4" style="height:120px; width:100%;"></div>
 									
 								</div>
 
@@ -372,11 +366,17 @@ header("Location:index.php");
 <!-- Bootstrap Core JavaScript -->
 <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src='scripts/dashboard.js'></script>
-<script  src="./bower_components/angular-google-chart/ng-google-chart.min.js"></script>
+
  <!-- Angular Material Scripts --> 
   <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-material/angular-material.js"></script>
+<script src="./bower_components/amcharts3/amcharts/amcharts.js"></script>
+    <script src="./bower_components/amcharts3/amcharts/pie.js"></script>
+    <script src="./bower_components/amcharts3/amcharts/plugins/dataloader/dataloader.min.js"></script>
+
+
+
 <script type="text/javascript" src="menu/dist/js/jquery.mmenu.all.min.js"></script>
 		
 </body>

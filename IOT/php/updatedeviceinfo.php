@@ -1,10 +1,4 @@
-
-
-
 <?php
-
-// Update info about a particular device 
-
 $id=$_POST['id'];
 $name=$_POST['name'];
 $regionId=$_POST['regionId'];
@@ -14,8 +8,7 @@ $group1=$_POST['group1'];
 $latitude=$_POST['latitude'];
 $longitude=$_POST['longitude'];
 $elevation=$_POST['elevation'];
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $query1="SELECT * FROM groups WHERE name='$group1'";
 $result=mysqli_query($dbc,$query1);
 $group=mysqli_fetch_array($result);

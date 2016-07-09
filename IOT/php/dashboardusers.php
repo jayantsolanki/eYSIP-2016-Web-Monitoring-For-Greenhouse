@@ -1,21 +1,5 @@
-
-
-
-
-
 <?php
-
-/*  Used to find the count of
-
-1. New Users
-2. Noraml Users
-3. Administrative Users
-4. De-activated Users
-
-*/
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $query="SELECT COUNT(*) AS count FROM users";
 $result_array=array();
 $result=mysqli_query($dbc,$query);

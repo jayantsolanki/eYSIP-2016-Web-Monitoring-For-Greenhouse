@@ -1,12 +1,5 @@
-
-
-
 <?php
-
-// Used to obtain information about various tasks 
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $query="SELECT * FROM tasks ";
 $result=mysqli_query($dbc,$query);
 $result_array=array();

@@ -1,13 +1,5 @@
-
- 
-
-
 <?php
-
-// Used to obtain count of manual,scheduled and automated tasks and also find the number of respective active tasks
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $result_array=array();
 $query="SELECT COUNT(*) AS count FROM tasks";
 $result=mysqli_query($dbc,$query);

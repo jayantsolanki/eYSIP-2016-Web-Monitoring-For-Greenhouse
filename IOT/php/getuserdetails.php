@@ -1,13 +1,7 @@
-
-
-
 <?php
-
-// Used to obtain info about user account
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
-$query='SELECT * FROM users';
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
+$id=$_COOKIE['user_id'];
+$query="SELECT * FROM users WHERE user_id!='$id'";
 $result=mysqli_query($dbc,$query);
 $result_array=array();
 while($row=mysqli_fetch_array($result)){

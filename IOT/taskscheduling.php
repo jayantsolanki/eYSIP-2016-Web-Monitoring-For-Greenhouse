@@ -4,7 +4,8 @@
 	<meta charset='utf-8'>
    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-   	 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+       <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+
      <title>Task Scheduling-Greenhouse monitoring</title>
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
@@ -183,7 +184,7 @@
   <p class='heading2 tasklist '> Scheduled tasks </p>
     <div ng-repeat='y in groups' style='padding-left:20px;' class='small' >
       <div class='boxes' ng-if='checkgroup(y.id)'>
-      <span ng-if='checkgroup(y.id)' class='groupheading'>Group:{{y.name}}</span>
+      <span ng-if='checkgroup(y.id)' class='groupheading'>Group:<span class='label label-primary'>{{y.name}}</span></span>
       <span ng-repeat ='x in tasks' ng-if='x.groupId!=null' >
         <div class='schedules'>
         <div ng-if='x.groupId==y.id' ng-init='z=getnumber()' style='padding-top:10px; padding-bottom:10px;'>
@@ -211,7 +212,7 @@
     </div>
         <div style='margin-left:20px;'>
         <div class='boxes' >
-            <span ng-repeat='x in tasks' ng-if='x.groupId==null'>
+            <span ng-repeat='x in tasks' ng-if='x.groupId==null' >
             <span class='groupheading'>{{x.deviceId}}/{{x.switchId}}</span>
             <div class='schedules small' style='padding-top:10px;padding-bottom:10px;'>
               <span>Starts:{{x.start}} hrs</span>
@@ -269,6 +270,7 @@ header("Location:index.php");
  <!-- Customs Scripts -->
 <script type='text/javascript' src="scripts/taskscheduling.js" ></script>
 <script type="text/javascript" src="menu/dist/js/jquery.mmenu.all.min.js"></script>
-
+<script src='./bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js'></script>
+<script src='./bower_components/angular-confirm-modal/angular-confirm.min.js'></script> 
 </body>
 </html>

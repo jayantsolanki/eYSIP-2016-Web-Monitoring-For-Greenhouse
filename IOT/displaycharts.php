@@ -4,7 +4,8 @@
 		<meta charset='utf-8'>
    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-   	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link href='./bower_components/roboto-fontface/css/roboto/roboto-fontface.css' rel='stylesheet' type='text/css'>
+ 
     <title>Displaying Charts-Greenhouse Monitoring</title>
 <link type="text/css" rel="stylesheet" href="menu/demo/css/demo.css" />
 <link type="text/css" rel="stylesheet" href="menu/dist/css/jquery.mmenu.all.css" />
@@ -15,7 +16,7 @@
 		<link rel="stylesheet" href="./bower_components/angular-material/angular-material.css">
 		<link rel="stylesheet" type='text/css' href="styles/displaycharts.css" >
 		<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-	<script src='https://use.fontawesome.com/7b73576b8a.js'></script>
+<link href="./bower_components/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
   </head>
 
@@ -40,9 +41,9 @@
 
 		<div class='controller'>
 			<h2 class='heading' style="text-align:center;">DATA VISUALIZATION</h2>
-    	<div class="md-padding" ng-cloak>
+    	<div class="container-fluid" ng-cloak>
   			<div class="row">
-    			<div  class='group_row col-md-3 col-xs-12'>
+    			<div  class=' col-md-3 col-xs-12'>
 						<md-input-container>
        				<span></span>
         			<label>Select Group:</label>
@@ -172,11 +173,11 @@ header("Location:index.php");
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.js"></script>-->
-    <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+    <script src="./scripts/loading.js"></script>
     <!-- Amcharts Library -->
     <script src="./bower_components/amcharts3/amcharts/amcharts.js"></script>
     <script src="./bower_components/amcharts3/amcharts/serial.js"></script>
-    <script src="./bower_components/amcharts3/amcharts/plugins/dataloader/dataloader.min.js"></script>
+    <script src="./bower_components/amcharts3/plugins/dataloader/dataloader.min.js"></script>
    
     <!-- Customs Scripts -->
     <script type='text/javascript' src="scripts/displaycharts.js" ></script>

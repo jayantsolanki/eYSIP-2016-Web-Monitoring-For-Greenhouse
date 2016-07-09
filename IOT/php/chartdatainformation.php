@@ -1,24 +1,6 @@
-
-
-
-
 <?php
 
-/*
- 
-Used to do obtain following information
-
-1. Device type i.e whether it is a valve or a sensor
-2. No of switches of particular device
-3. If the device is a sensor,then which type of sensor it is i.e whether it is bthm,bm or b.
-
-*/
-
-
-
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT');
 $userDevice=$_GET['userDevice'];
 $result_array=array();
 $query="SELECT * FROM devices WHERE deviceId='$userDevice'";

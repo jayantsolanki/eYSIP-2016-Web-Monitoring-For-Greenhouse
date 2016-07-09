@@ -1,15 +1,6 @@
-
-
-
-
 <?php
-
-// Used to get information of a device
-
-require_once('config.php');
-$dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);
-
-$query="SELECT * from devices ";
+$dbc=mysqli_connect('localhost','root','ankitg444','IOT') or die('error');
+$query="SELECT * from devices ORDER BY status DESC";
 $result=mysqli_query($dbc,$query) or die('error');
 $result_array=array();
 while($row=mysqli_fetch_array($result))
@@ -26,8 +17,10 @@ while($row=mysqli_fetch_array($result))
   			$row_array['field4']=$row['field4'];
   			$row_array['field5']=$row['field5'];
   			$row_array['field6']=$row['field6'];
-  			$row_array['created_at']=$row['created_at'];
-  			$row_array['updated_at']=$row['updated_at'];				
+  			 $row_array['created_at'] = strtotime($row['created_at']);
+
+       
+  			$row_array['updated_at']=strtotime($row['updated_at']);				
 			$row_array['elevation']=$row['elevation'];
   			$row_array['status']=$row['status'];
 			$row_array['deviceId'] = $row['deviceId'];
@@ -86,8 +79,8 @@ while($row=mysqli_fetch_array($result))
   							$row_array['field4']=$row['field4'];
   							$row_array['field5']=$row['field5'];
   							$row_array['field6']=$row['field6'];
-  							$row_array['created_at']=$row['created_at'];
-  							$row_array['updated_at']=$row['updated_at'];				
+  							$row_array['created_at']=strtotime($row['created_at']);
+  							$row_array['updated_at']=strtotime($row['updated_at']);				
   							$row_array['elevation']=$row['elevation'];
   							$row_array['status']=$row['status'];
   							$row_array['deviceId'] = $row['deviceId'];

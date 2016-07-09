@@ -102,7 +102,7 @@ $scope.option=option
       animation: $scope.animationsEnabled,
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',
-      
+    windowClass: 'center-modal',      
       resolve: {
       	option:function(){
       		return option
