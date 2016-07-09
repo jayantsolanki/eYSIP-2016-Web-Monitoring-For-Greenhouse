@@ -1,3 +1,6 @@
+
+<!-- Used to obtain information about valves-->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

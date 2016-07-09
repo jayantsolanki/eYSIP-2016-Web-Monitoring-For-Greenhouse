@@ -1,3 +1,5 @@
+<!--  Used to get count of connectivity status of all devices -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

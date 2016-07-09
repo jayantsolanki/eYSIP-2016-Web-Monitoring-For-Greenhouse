@@ -1,3 +1,6 @@
+
+<!-- Used to store on/off feature of switch of a valve -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

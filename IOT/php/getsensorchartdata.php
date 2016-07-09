@@ -1,3 +1,6 @@
+
+<!-- Used to get data such as temp,moist,battery and humidity of all sensors (For Charts) -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

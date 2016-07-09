@@ -1,3 +1,8 @@
+
+
+<!-- Forgot password php script -->
+
+
 <?php
 
 $username=$_POST['username'];

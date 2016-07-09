@@ -1,3 +1,5 @@
+<!--  Used to obtain information of various switches -->
+
 <?php
 require_once('config.php');
 $dbc=mysqli_connect($dbhost,$dbusername,$dbpassword,$dbname);

@@ -1,3 +1,6 @@
+
+<!-- Update info about a particular device -->
+
 <?php
 $id=$_POST['id'];
 $name=$_POST['name'];

@@ -1,3 +1,6 @@
+
+<!-- Stores information of a new user when he sign ups -->
+
 <?php
 
 $username=$_POST['username'];
