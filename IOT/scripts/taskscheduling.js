@@ -38,6 +38,7 @@ app.controller('taskschedulecontroller',function($scope,$http,$confirm){
       });
 
   });
+    //Add new schedule
  $scope.enterschedule=function(){
  	$scope.startmins=parseInt($scope.startmins);
  	$scope.stopmins=parseInt($scope.stopmins);
@@ -262,6 +263,8 @@ $scope.setnumber=function(){
 $scope.number=0;
 
 }
+
+//disable a schedule
 $scope.disable=function(y){
 			      $http({
 		          method  : 'POST',
@@ -307,6 +310,8 @@ $scope.disable=function(y){
 				});	
 
 }
+
+//Enable a schedule
 $scope.enable=function(y){
 			      $http({
 		          method  : 'POST',
@@ -352,7 +357,7 @@ $scope.enable=function(y){
 				});	
 
 }
-
+//Delete a schedule
 $scope.delete=function(y){
 	$confirm({text: 'Are you sure you want to delete?'})
         .then(function() {

@@ -22,7 +22,7 @@ app.controller('devicestatuscontroller',function($scope,$http){
       $scope.devices = response.data;
   
   }); 
-
+//Used to select group type on device status page
 $scope.onchange=function(){
 
 	angular.forEach($scope.groups,function(value,key){

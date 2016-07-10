@@ -37,6 +37,10 @@ app.controller('devicehealthcontroller',function($scope,$http,$confirm){
 			$scope.conditionSelected=y;
 		
 		}
+
+
+
+//Add a particular action
 $scope.add=function(){
 	var name=angular.element('#name').val();
 	if($scope.fieldSelected!='Online/Offline'){
@@ -92,6 +96,10 @@ $scope.add=function(){
     .then(function (response) {
       $scope.react= response.data;
   });
+
+ //Gets called when user clicks on delete glyphicon in device health and system automation page
+//Delete a particular action
+
 $scope.delete=function(y){
 	$confirm({text: 'Are you sure you want to delete?'})
   .then(function(){  

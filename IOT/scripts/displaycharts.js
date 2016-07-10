@@ -137,7 +137,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 
 		})
 	});
-
+	//Used to select group type on display charts page
 	$scope.onchange=function()
 	{
 		
@@ -378,7 +378,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 		
 		//Call showChart
 	}
-
+	//Used to make amcharts line chart
 	$scope.makeChart=function(chartdata,custom,tabnumber)
 	{
 		/*AmCharts.addInitHandler(function(chart)
@@ -483,7 +483,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
         	"dataProvider":$scope.chartdata 
       	});
 		$(function() 
-		{ //websocket
+		{ //Format date
         function time_format(d) {
            year=d.getFullYear();
            month=format_two_digits(d.getMonth());

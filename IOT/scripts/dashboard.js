@@ -13,6 +13,8 @@ app.controller('dashboardcontroller',function($scope,$http)
  		$scope.users = response.data;
 	});
 		
+
+
 	$http.get("php/gethealth1.php")
 	.then(function (response) 
 	{
@@ -127,7 +129,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 			 
 		
-
+    //Used to select group for valves
 		$scope.setAction=function(y){
 			$scope.groupSelected=y.name;
 			 $http({
@@ -141,6 +143,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});  
 		
 		}
+        //Used to select group for sensors    
 				$scope.setAction1=function(y){
 			$scope.groupSelected1=y.name;
 			 $http({
@@ -171,7 +174,7 @@ app.controller('dashboardcontroller',function($scope,$http)
   });
 			
 
-   	   
+  // Used to make pie chart   
 	$scope.makeChartHealth1=function()
 	{
   	var chart1 = AmCharts.makeChart("charthealth1", 
@@ -252,7 +255,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 	}
 
 
-
+  // Used to make pie chart
 	$scope.makeChartHealth2=function()
 	{
 		var chart2 = AmCharts.makeChart("charthealth2", 
@@ -341,7 +344,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 		}
 	}
 
-
+  // Used to make pie chart
 	$scope.makeChartHealth3=function()
 	{
 		var chart3 = AmCharts.makeChart("charthealth3", 
@@ -420,7 +423,7 @@ app.controller('dashboardcontroller',function($scope,$http)
   			wedge.parentNode.appendChild(wedge);  
 		}
 	}
-
+  // Used to make pie chart
 	$scope.makeChartHealth4=function()
 	{
 		var chart4 = AmCharts.makeChart("charthealth4", 
@@ -499,7 +502,7 @@ app.controller('dashboardcontroller',function($scope,$http)
   			wedge.parentNode.appendChild(wedge);  
 		}
 	}
-
+  // Used to make pie chart
 	$scope.makeChartoc=function()
 	{
 		var chart5 = AmCharts.makeChart("chartoc", 
@@ -579,7 +582,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 		}
 	}
 
-
+  // Used to make pie chart
 	$scope.makeChartonoff=function()
 	{
 		var chart6 = AmCharts.makeChart("chartonoff", 

@@ -145,6 +145,9 @@ if ( pswd.match(/\d/) ) {
     $('#pswd_info').hide();
 }
 });
+
+
+//Gets called when user clicks on create account button
 $('#signupbutton').click(function()
 {
 
