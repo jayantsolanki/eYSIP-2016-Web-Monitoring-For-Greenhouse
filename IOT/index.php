@@ -18,7 +18,7 @@ if(!isset($_COOKIE['user_id'])){
 
 	<div class="container" ng-controller="formcontroller">
 		<div class="row">
-			<div class="col-md-offset-3 col-md-6 col-xs-12">
+			<div class="col-md-offset-3 col-md-7 col-xs-12">
 
 				<p  id="login">Login</p>
 				<div id="loginerror">
@@ -45,11 +45,13 @@ if(!isset($_COOKIE['user_id'])){
 						<label  for="password" class="input_headings control-label">Password</label> </br>
 						<input type="password" id="password" name="password" class="login_fields" ng-model="login.password" ng-class="{ 'login_fields_error  ': loginform.password.$error.required && !loginform.password.$pristine }" required></br>
 						<p id="password_feed" class="login_fields1 has-error">Please enter a password.</p>
-							</div>
+					</div>
 
 					<!-- Forget Password Link -->
 
-					<div><a id="forgetpassword" href="forgotpassword.php">Forgot Password?</a></div>
+					<div>
+						<a id="forgetpassword" href="forgotpassword.php">Forgot Password?</a>
+					</div>
 
 
  					<!-- Login Button-->

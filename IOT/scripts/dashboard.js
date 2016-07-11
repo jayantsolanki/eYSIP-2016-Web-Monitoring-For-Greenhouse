@@ -186,6 +186,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -25,
     		 "labelText": "[[value]]",
     		"labelColorField": "#fffff",
+        "creditsPosition":"bottom-right",
  			"defs": 
     		{
       			"filter": [{
@@ -232,8 +233,8 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart1.autoMargins = false;
-		chart1.marginTop = 20;
-		chart1.marginBottom = 5;
+		chart1.marginTop = 5;
+		chart1.marginBottom = 20;
 		chart1.marginLeft = 0;
 		chart1.marginRight = 0;
 		chart1.pullOutRadius = 0;
@@ -267,7 +268,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -25,
     		"labelText": "[[value]]",
     		"labelColorField": "#fff",
-    		creditsPosition:"bottom-right",
+    		"creditsPosition":"bottom-right",
     		/*"legend":
     		{
     			//"position":"right",
@@ -321,7 +322,7 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart2.autoMargins = false;
-		chart2.marginTop = 0;
+		chart2.marginTop = 5;
 		chart2.marginBottom = 20;
 		chart2.marginLeft = 0;
 		chart2.marginRight = 0;
@@ -356,6 +357,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -25,
     		"labelText": "[[value]]",
     		"labelColorField": "#fff",
+        "creditsPosition":"bottom-right",
  			"defs": 
     		{
       			"filter": [{
@@ -402,8 +404,8 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart3.autoMargins = false;
-		chart3.marginTop = 20;
-		chart3.marginBottom = 5;
+		chart3.marginTop = 5;
+		chart3.marginBottom = 20;
 		chart3.marginLeft = 0;
 		chart3.marginRight = 0;
 		chart3.pullOutRadius = 0;
@@ -435,6 +437,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -25,
     		"labelText": "[[value]]",
     		"labelColorField": "#fff",
+        "creditsPosition":"bottom-right",
  			"defs": 
     		{
       			"filter": [{
@@ -481,8 +484,8 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart4.autoMargins = false;
-		chart4.marginTop = 20;
-		chart4.marginBottom = 5;
+		chart4.marginTop = 5;
+		chart4.marginBottom = 20;
 		chart4.marginLeft = 0;
 		chart4.marginRight = 0;
 		chart4.pullOutRadius = 0;
@@ -514,6 +517,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -15,
     		"labelText": "[[value]]",
     		"labelColorField": "#fff",
+        "creditsPosition":"bottom-right",
  			"defs": 
     		{
       			"filter": [{
@@ -560,8 +564,8 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart5.autoMargins = false;
-		chart5.marginTop = 20;
-		chart5.marginBottom = 5;
+		chart5.marginTop = 5;
+		chart5.marginBottom = 20;
 		chart5.marginLeft = 0;
 		chart5.marginRight = 0;
 		chart5.pullOutRadius = 0;
@@ -594,6 +598,7 @@ app.controller('dashboardcontroller',function($scope,$http)
     		"labelRadius": -15,
     		"labelText": "[[value]]",
     		"labelColorField": "#fff",
+        "creditsPosition":"bottom-right",
  			"defs": 
     		{
       			"filter": [{
@@ -640,8 +645,8 @@ app.controller('dashboardcontroller',function($scope,$http)
 		});
 		
 		chart6.autoMargins = false;
-		chart6.marginTop = 20;
-		chart6.marginBottom = 5;
+		chart6.marginTop = 5;
+		chart6.marginBottom = 20;
 		chart6.marginLeft = 0;
 		chart6.marginRight = 0;
 		chart6.pullOutRadius = 0;

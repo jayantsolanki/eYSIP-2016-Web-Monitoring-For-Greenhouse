@@ -35,7 +35,7 @@ if($field_value_int==3)
 		while($row=mysqli_fetch_array($result))
 		{
 			$row_array['time']=$row['created_at'];
-			$row_array['value']=$row['field3'];
+			$row_array['value']=number_format($row['field3']/4096*4,3,'.','');
 			array_push($result_array, $row_array);
 		}
 	}
@@ -47,7 +47,7 @@ if($field_value_int==3)
 		while($row=mysqli_fetch_array($result))
 		{
 			$row_array['time']=$row['created_at'];
-			$row_array['value']=$row['field3'];
+			$row_array['value']=number_format($row['field3']/4096*4,3,'.','');
 			array_push($result_array, $row_array);
 		}
 	}
@@ -61,7 +61,7 @@ if($field_value_int==3)
 		while($row=mysqli_fetch_array($result))
 		{	
 			$row_array['time']=$row['created_at'];
-			$row_array['value']=$row['field3'];
+			$row_array['value']=number_format($row['field3']/4096*4,3,'.','');
 			array_push($result_array, $row_array);
 		}
 	}
@@ -73,7 +73,7 @@ if($field_value_int==3)
 		while($row=mysqli_fetch_array($result))
 		{
 			$row_array['time']=$row['created_at'];
-			$row_array['value']=$row['field3'];
+			$row_array['value']=number_format($row['field3']/4096*4,3,'.','');
 			array_push($result_array, $row_array);
 		}
 	}

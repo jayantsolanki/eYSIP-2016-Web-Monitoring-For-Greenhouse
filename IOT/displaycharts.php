@@ -43,7 +43,7 @@
 			<h2 class='heading' style="text-align:center;">DATA VISUALIZATION</h2>
     	<div class="container-fluid" ng-cloak>
   			<div class="row">
-    			<div  class=' col-md-3 col-xs-12'>
+    			<div  class=' col-md-2 col-xs-6'>
 						<md-input-container>
        				<span></span>
         			<label>Select Group:</label>
@@ -76,9 +76,9 @@
             </div>
             <div class=" chartDisplayDiv configuration" >
               <div ng-repeat='x in deviceinfo'>
-                <div class=" displayafter extrass" style="margin-left:15px">
+                <div class=" displayafter extrass" style="margin-top:40px">
                   <md-input-container >
-                    <label>Y Axis Limit</label>
+                    <label>Y Axis Limit (ADC)</label>
                     <input id="yaxis" ng-model="limit" >
                     <p class="limit_p limit_error">Enter Positive number</p>
                   </md-input-container>
@@ -117,9 +117,9 @@
              <!--<span id="extra" style='position:absolute; top:0;right:0;'>Hello</span>-->
             <div class="extradata">
               <span  ng-click="before()" class="glyphicon glyphicon-chevron-left removeGlyphicon"></span>
-              <span ng-if="tab==1">{{mydate}}</span>
-              <span ng-if="tab==2">{{myweek}}</span>
-              <span id="impspan" ng-if="tab==3">{{mymonth1}}</span>
+              <span ng-if="tab==1">{{mydate}} {{mymonth1}}</span>
+              <span ng-if="tab==2">{{myweek | getWeekRange}}</span>
+              <span id="impspan" ng-if="tab==3">{{mymonth1}}, {{myyear}}</span>
               <span ng-if="tab==4">{{myyear}}</span>
               <span  ng-click="after()" class="glyphicon glyphicon-chevron-right"></span>
             </div>

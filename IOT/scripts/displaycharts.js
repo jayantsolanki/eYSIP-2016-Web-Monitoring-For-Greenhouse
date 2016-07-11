@@ -47,6 +47,25 @@ var n = month[mydate.getMonth()+1];
 var y=mydate.getFullYear();
 var d=mydate.getDate();
 var w=mydate.getWeek();
+/*app.filter('getMonthYear', function () {
+	  return function getDateRangeOfWeek(month, year){
+	  	return month+" "+year;
+	  };
+});*/
+app.filter('getWeekRange', function () {
+	  return function getDateRangeOfWeek(weekNo){
+	    var d1 = new Date();
+	    numOfdaysPastSinceLastMonday = eval(d1.getDay()- 1);
+	    d1.setDate(d1.getDate() - numOfdaysPastSinceLastMonday);
+	    var weekNoToday = d1.getWeek();
+	    var weeksInTheFuture = eval( weekNo - weekNoToday );
+	    d1.setDate(d1.getDate() + eval( 7 * weeksInTheFuture ));
+	    var rangeIsFrom =  d1.getDate()+" " + month[eval(d1.getMonth()+1)];
+	    d1.setDate(d1.getDate() + 6);
+	    var rangeIsTo =  d1.getDate()+" " + month[eval(d1.getMonth()+1)] + " " + d1.getFullYear();
+	    return rangeIsFrom + " - "+rangeIsTo;
+	};
+});
 app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 {
 	$scope.chartdata=chartdata;
@@ -72,6 +91,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 		$scope.limit=angular.element('#yaxis').val();
 	}
 
+	
 	//Used to check if a year is leap year or not
 	$scope.checkLeapYear=function(year)
 	{
@@ -277,7 +297,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 							"title": "Primary Battery Values",
                         	"id": "Primary Battery Chart",
                         	"yAxisName": "Battery in adc Value",
-                        	"unit":"  "
+                        	"unit":"Volts"
 						}
 					}
 					if(field_value==2)
@@ -286,7 +306,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 							"title": "Secondary Battery Values",
                         	"id": "Secodary Battery Chart",
                         	"yAxisName": "Battery in adc Value",
-                        	"unit":"  "
+                        	"unit":"Volts"
 						}
 					}
 					$scope.makeChart($scope.chartdata,$scope.custom,$scope.tab);
@@ -327,7 +347,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 							"title": "Battery Values",
                         	"id": "Battery Chart",
                         	"yAxisName": "Battery in adc Value",
-                        	"unit":"  "
+                        	"unit":"Volts"
 						}
 					}
 					if(field_value==4)
@@ -408,11 +428,11 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
         	"dataDateFormat": "YYYY-MM-DD-JJ-NN",
         	"startDuration": 1,
         	"backgroundColor": "#000000",
-                    
+            "creditsPosition":"bottom-right",       
         	// "rotate": true,
         	"categoryAxis": 
         	{
-          		"title": custom.id,
+          		"title": $scope.custom.id,
          		"parseDates": true,
           		"equalSpacing" : true,
           		"minPeriod":"mm",
@@ -420,12 +440,13 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
         	},
 			"valueAxis":
         	{
-        		"title": custom.yAxisName,
-          		"unit": custom.unit,
+        		"title": $scope.custom.yAxisName,
+          		"unit": $scope.custom.unit,
           		"id":"v1",
           		"axisAlpha": 0,
           		"position": "left",
-          		"ignoreAxisWidth":true
+          		"ignoreAxisWidth":true,
+
           	},
         	"chartCursor": 
         	{
@@ -447,7 +468,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
       		"chartScrollbar": 
         	{
           		"graph":'g2',
-          		"title": custom.title,
+          		"title": $scope.custom.title,
           		"oppositeAxis":false,
                 "offset":30,
                 "scrollbarHeight": 80,
@@ -464,8 +485,10 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
       		"graphs": 
         	[{
           		"id": "g2",
-          		"title": custom.title,
+          		"title": $scope.custom.title,
           		"lineThickness ": 10,
+          		"fillAlphas": 0.6,
+        		"lineAlpha": 0.4,
           		"balloon":
           		{
             		"drop":true,
@@ -473,7 +496,8 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
             		"color":"#ffffff"
           		},
           		"valueAxis":"v1",
-          		"valueField":"value"
+          		"valueField":"value",
+          		"balloonText": "[[value]] "+$scope.custom.unit+"</span>"
 
         	}],
         	"export":
@@ -681,7 +705,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 			$scope.mymonth1=$scope.month[$scope.mymonth];
 			//window.alert($scope.mymonth);
 			//window.alert($scope.mymonth1);
-			angular.element('#impspan').text($scope.mymonth1);
+			angular.element('#impspan').text($scope.mymonth1+", "+$scope.myyear);
 			$scope.showGraph($scope.device_id,$scope.device_type,$scope.field,$scope.tab,$scope.mymonth,$scope.myyear,$scope.myweek,$scope.mydate,$scope.limit);
 		}
 		else if ($scope.tab==4) 
@@ -703,7 +727,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 		}
 		else if($scope.tab==1)
 		{
-			window.alert($scope.mymonth);
+			//window.alert($scope.mymonth);
 			if($scope.mydate==1)
 			{
 				$scope.myweek==1;
