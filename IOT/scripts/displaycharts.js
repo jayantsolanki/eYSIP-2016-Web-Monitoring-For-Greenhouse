@@ -489,12 +489,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
           		"lineThickness ": 10,
           		"fillAlphas": 0.6,
         		"lineAlpha": 0.4,
-          		"balloon":
-          		{
-            		"drop":true,
-            		"adjustBorderColor":false,
-            		"color":"#ffffff"
-          		},
+          		
           		"valueAxis":"v1",
           		"valueField":"value",
           		"balloonText": "[[value]] "+$scope.custom.unit+"</span>"
@@ -817,7 +812,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
 				$scope.mymonth=$scope.mymonth+1;
 			}
 			$scope.mymonth1=$scope.month[$scope.mymonth];
-			angular.element('#impspan').text($scope.mymonth1);
+			angular.element('#impspan').text($scope.mymonth1+", "+$scope.myyear);
 			$scope.showGraph($scope.device_id,$scope.device_type,$scope.field,$scope.tab,$scope.mymonth,$scope.myyear,$scope.myweek,$scope.mydate,$scope.limit);
 		}
 		else if ($scope.tab==4) 
