@@ -425,7 +425,7 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
         	//"pathToImages": "amcharts/images/",
         	"categoryField": "time",
         	"valueField":"value",
-        	"dataDateFormat": "YYYY-MM-DD-JJ-NN",
+        	"dataDateFormat": "YYYY-MM-DD JJ:NN",
         	"startDuration": 1,
         	"backgroundColor": "#000000",
             "creditsPosition":"bottom-right",       
