@@ -509,79 +509,75 @@ app.controller('chartdisplaycontroller',function($scope,$http,$interval)
            date=format_two_digits(d.getDate());
            hours = format_two_digits(d.getHours());
            minutes = format_two_digits(d.getMinutes());
-           return year+"-"+month+"-"+date+"-"+hours + "-" + minutes;
+           return year+"-"+month+"-"+date+" "+hours + ":" + minutes;
        }
        function format_two_digits(n) {
             return n < 10 ? '0' + n : n;
        }
            
-           ws.onmessage = function(e) {
-            //alert(2);
-            var chartpoint = JSON.parse(e.data);
-            //console.log(chartpoint);
- 			var nmr = new Date();
-            var formatted_time = time_format(nmr);
-                      
-             //alert($scope.field);
-             //alert(3);
-             //valElem.html(e.data);
-             if($scope.tab==1){
-             if($scope.field==3)
-             {
-               if($scope.device_id==chartpoint['deviceId']){
-                	chart.dataProvider.push({
-              		time: formatted_time,
-                   	value: chartpoint['batValue']
-                   });
-                   chart.validateData();
-                   //zoomChart();
-               }
-               //alert(chartpoint['batValue']);
-             }
-             else if($scope.field==4)
-             {
-               //alert(chartpoint['tempValue']);
-               if($scope.device_id==chartpoint['deviceId']){
-                   chart.dataProvider.push({
-                   time: formatted_time,
-                   value: chartpoint['tempValue']
-                   });
-                   chart.validateData();
-                  // zoomChart();
-               }
-               
-             }
-             else if($scope.field==5)
-             {
-               if($scope.device_id==chartpoint['deviceId']){
-                   chart.dataProvider.push({
-                   time: formatted_time,
-                   value: chartpoint['humidityValue']
-                   });
-                   chart.validateData();
-                   //zoomChart();
-               }
-             }
-             else if($scope.field==6)
-             {
-               if($scope.device_id==chartpoint['deviceId']){
-                   chart.dataProvider.push({
-                   time: formatted_time,
-                   value: chartpoint['moistValue']
-                   });
-                   chart.validateData();
-                   //zoomChart();
-               }
-             }
-             }
+       ws.onmessage = function(e) {
+        //alert(2);
+		var chartpoint = JSON.parse(e.data);
+		//console.log(chartpoint);
+		var nmr = new Date();
+		var formatted_time = time_format(nmr);
+         if($scope.tab==1){
+         if($scope.field==3)
+         {
+           if($scope.device_id==chartpoint['deviceId']){
+            	chart.dataProvider.push({
+          		time: formatted_time,
+               	value: chartpoint['batValue']
+               });
+               chart.validateData();
+               //zoomChart();
            }
-           ws.onclose = function(e) {
-             console.log("Connection closed");
+           //alert(chartpoint['batValue']);
+         }
+         else if($scope.field==4)
+         {
+           //alert(chartpoint['tempValue']);
+           if($scope.device_id==chartpoint['deviceId']){
+               chart.dataProvider.push({
+               time: formatted_time,
+               value: chartpoint['tempValue']
+               });
+               chart.validateData();
+              // zoomChart();
            }
- 
-           function disconnect() {
-             ws.close();
+           
+         }
+         else if($scope.field==5)
+         {
+           if($scope.device_id==chartpoint['deviceId']){
+               chart.dataProvider.push({
+               time: formatted_time,
+               value: chartpoint['humidityValue']
+               });
+               chart.validateData();
+               //zoomChart();
            }
+         }
+         else if($scope.field==6)
+         {
+           if($scope.device_id==chartpoint['deviceId']){
+               chart.dataProvider.push({
+               time: formatted_time,
+               value: chartpoint['moistValue']
+               });
+               chart.validateData();
+               //zoomChart();
+           }
+         }
+         }
+       }
+       ws.onclose = function(e) {
+         console.log("Connection closed");
+       }
+
+       function disconnect() {
+         ws.close();
+       }
        });
 	}
 
