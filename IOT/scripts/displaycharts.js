@@ -53,16 +53,31 @@ var w=mydate.getWeek();
 	  };
 });*/
 app.filter('getWeekRange', function () {
-	  return function getDateRangeOfWeek(weekNo){
+
+    return function getDateRangeOfWeek(weekNo){
+    	var mon = new Array();
+		mon[1] = "Jan";
+		mon[2] = "Feb";
+		mon[3] = "Mar";
+		mon[4] = "Apr";
+		mon[5] = "May";
+		mon[6] = "June";
+		mon[7] = "July";
+		mon[8] = "Aug";
+		mon[9] = "Sept";
+		mon[10] = "Oct";
+		mon[11] = "Nov";
+		mon[12] = "Dec";
 	    var d1 = new Date();
 	    numOfdaysPastSinceLastMonday = eval(d1.getDay()- 1);
 	    d1.setDate(d1.getDate() - numOfdaysPastSinceLastMonday);
 	    var weekNoToday = d1.getWeek();
 	    var weeksInTheFuture = eval( weekNo - weekNoToday );
 	    d1.setDate(d1.getDate() + eval( 7 * weeksInTheFuture ));
-	    var rangeIsFrom =  d1.getDate()+" " + month[eval(d1.getMonth()+1)];
+	    var rangeIsFrom =  d1.getDate()+" " + mon[eval(d1.getMonth()+1)];
 	    d1.setDate(d1.getDate() + 6);
-	    var rangeIsTo =  d1.getDate()+" " + month[eval(d1.getMonth()+1)] + " " + d1.getFullYear();
+	    var rangeIsTo =  d1.getDate()+" " + mon[eval(d1.getMonth()+1)] + " " + d1.getFullYear();
+	    //alert(rangeIsFrom + " - "+rangeIsTo);
 	    return rangeIsFrom + " - "+rangeIsTo;
 	};
 });
